@@ -1,0 +1,113 @@
+.contenedor {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: 
+    linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.3)),
+    url('/img/background_sesion.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.contenedor-sesion {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  border-radius: 1rem;
+  border: 2px solid lightgrey;
+  max-width: 800px;
+  max-height: 500px;
+  overflow: hidden;
+}
+
+.contenedor-sesion-img {
+  width: auto;
+  border-bottom: 2px solid lightgrey;
+  overflow: hidden;
+  max-height: 250px;
+  background-color: white;
+}
+
+.img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.contenedor-sesion-datos {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  justify-content: center;
+  background-color: white;
+}
+
+.input-datos {
+  padding: 0.5rem;
+  border-radius: 0.3rem;
+  border: 1px solid lightgray;
+  margin-top: 0.1rem;
+}
+
+.titulo{
+  text-align: center;  
+}
+.text {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+
+.link {
+  padding-top: 0.3rem;
+  font-size: 0.7rem;
+  text-align: right;
+  text-decoration: none;
+  color: #0661FC;
+}
+
+.btn {
+  margin-top: 0.7rem;
+  padding: 0.5rem;
+  border: none;
+  color: white;
+  background-color: #0661FC;
+  border-radius: 0.3rem;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #2f77f5;
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+  .contenedor-sesion {
+    flex-direction: row;
+    max-height: 400px;
+  }
+
+  .contenedor-sesion-img {
+    border-top: none;
+    border-right: 2px solid lightgrey;
+    width: 50%;
+    max-height: 400px;
+  }
+
+  .contenedor-sesion-datos {
+    width: 50%;
+    padding: 1.5rem;
+  }
+}
+
+/* Escritorio */
+@media (min-width: 1024px) {
+  .contenedor-sesion{
+    max-height: 600px;
+  }
+
+  .contenedor-sesion-datos {
+    padding: 2rem;
+  }
+}
