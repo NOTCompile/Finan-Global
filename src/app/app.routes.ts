@@ -11,6 +11,6 @@ export const routes: Routes = [
     },
     {
         path: '**',
-        redirectTo: 'inicio-sesion'
+        redirectTo: 'inicio-sesion',
     }
 ];
