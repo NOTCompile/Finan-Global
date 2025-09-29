@@ -1,3 +1,19 @@
-:host {
-  display: block;
+.contenedor{
+  min-height: 100vh;
+  background-color: #F5F6FA;
+}
+
+.contenedor-menu{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  position: relative;
+}
+
+.contenedor-contenido{
+  margin-left: 220px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }

@@ -1,0 +1,23 @@
+.opciones-datos{
+  display: flex;
+  flex-direction: column;  
+}
+
+.dato{
+  padding: 15px;
+  text-decoration: none;
+  color: white;
+  border: 1px solid black;
+}
+
+.dato:hover{
+  background: #2C3E50;
+  color: white;
+  font-weight: bolder;  
+}
+
+.activado{
+  background: #2C3E50;
+  color: white;
+  font-weight: bolder;  
+}
