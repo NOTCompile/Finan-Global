@@ -1,59 +1,45 @@
-# FinanGlobal
+# [FinanGLobal](https://finan-global.netlify.app/)
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.3.
+Este proyecto sienta las bases para el fortalecimiento de FinanGlobal S.A.C. en el mercado financiero regional mediante la incorporación de servicios digitales de alto valor agregado.
 
-## Development server
+## Tecnologías Utilizadas
+1. Angular CLI version 20.3.3
+2. Bootstrap version 5.3.8
+3. Flaticon version 3.3.1
 
-To start a local development server, run:
+## Servidor Local de Desarrollo
+Para levantar el servidor de desarrollo con recarga en vivo (si editas un archivo, se refresca automáticamente el navegador).
+Realizar los siguientes pasos:
+1. Clonar el repositorio.
+2. Instalar las dependencias con:
+
+ ```bash 
+npm install
+ ```
+
+3. Situarse dentro de la carpeta del proyecto e iniciar el servidor con:
 
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+4. En su navegador web ingresar a `http://localhost:4200/`
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
+## Compilación en modo desarrollo
+En Angular, el término build se refiere al proceso de compilar y empaquetar tu aplicación para que pueda ejecutarse de manera óptima en un navegador o en un servidor.
+1. Ejecutar el comando:
 
 ```bash
 ng build
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+En Angular, el término `build` se refiere al proceso de compilar y empaquetar tu aplicación para que pueda ejecutarse de manera óptima en un navegador o en un servidor.
 
-## Running unit tests
+2. El resultado del build aparece en la siguiente ruta: `dist/FinanGlobal/browser`
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## Visulización Online mediante [Netlify](https://www.netlify.com/)
+Netlify es una plataforma en la nube que te permite desplegar aplicaciones web (estáticas y JAMstack) de manera sencilla y rápida.
+1. Crear una cuenta en Netlify e iniciar sesión
+2. Crear un nuevo proyecto y completar con su información
+3. Subir la carpeta `browser` que esta dentro de la ruta `dist/FinanGloba/`
+4. Visualizar la página mediante el link proporcionado por Netlify
