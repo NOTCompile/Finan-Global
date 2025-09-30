@@ -1,4 +1,4 @@
-# [FinanGLobal](https://finan-global.netlify.app/)
+# [FinanGlobal](https://finan-global.netlify.app/)
 
 Este proyecto sienta las bases para el fortalecimiento de FinanGlobal S.A.C. en el mercado financiero regional mediante la incorporación de servicios digitales de alto valor agregado.
 
