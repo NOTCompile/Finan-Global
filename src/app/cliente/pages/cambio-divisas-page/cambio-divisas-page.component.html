@@ -1,0 +1,350 @@
+<app-barra-navegacion />
+
+<div class="container-fluid py-4">
+    <!-- Directorio -->
+    <!-- <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="dashboard.html">Inicio</a></li>
+                <li class="breadcrumb-item active">Cambio de Divisas</li>
+            </ol>
+        </nav> -->
+
+    <div class="row">
+        <!-- Informacion Derecha: Calculadora de Cambio -->
+        <div class="col-lg-8">
+            <div class="card-finanglobal">
+                <h3 class="mb-4">Calculadora de Cambio</h3>
+
+                <!-- Alerta Divisa -->
+                <div class="alert alert-finanglobal-info mb-4">                    
+                    Tasas actualizadas al día de hoy. Las tasas pueden variar según el monto de la operación.
+                </div>
+
+                <form id="exchangeForm">
+                    <!-- Moneda Origen x Moneda Destino -->
+                    <div class="mb-4">
+                        <div class="row g-3">
+                            <div class="col-md-5">
+                                <label class="form-label form-label-finanglobal">
+                                    <i class="fi fi-br-arrow-up"></i>Moneda de Origen
+                                </label>
+                                <select class="form-select form-control-finanglobal" id="fromCurrency" required>
+                                    <option value="PEN" selected>Soles Peruanos (S/.)</option>
+                                    <option value="USD">Dólares Americanos ($)</option>
+                                    <option value="EUR">Euros (€)</option>
+                                </select>
+                            </div>
+                            <div class="col-md-2 text-center">
+                                <label class="form-label d-block">&nbsp;</label>
+                                <button type="button" class="btn btn-outline-secondary" id="swapCurrencies">
+                                    <i class="fi fi-bs-exchange"></i>
+                                </button>
+                            </div>
+                            <div class="col-md-5">
+                                <label class="form-label form-label-finanglobal">
+                                    <i class="fi fi-br-arrow-down me-2"></i>Moneda de Destino
+                                </label>
+                                <select class="form-select form-control-finanglobal" id="toCurrency" required>
+                                    <option value="PEN">Soles Peruanos (S/.)</option>
+                                    <option value="USD" selected>Dólares Americanos ($)</option>
+                                    <option value="EUR">Euros (€)</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Monto a cambiar -->
+                    <div class="mb-4">
+                        <label class="form-label form-label-finanglobal">
+                            <i class="fas fa-money-bill-wave me-2"></i>Monto a Cambiar
+                        </label>
+                        <div class="input-group input-group-lg">
+                            <span class="input-group-text" id="currencySymbol">S/.</span>
+                            <input type="number" class="form-control form-control-finanglobal" id="amount"
+                                placeholder="0.00" step="0.01" min="1" required />
+                        </div>
+                        <small class="text-muted">Monto mínimo: S/. 10.00 | Monto máximo: S/. 50,000.00</small>
+                    </div>
+
+                    <!-- Visor de Cambio -->
+                    <div class="card-finanglobal-compact mb-4" id="rateDisplay">
+                        <div class="row align-items-center">
+                            <div class="col-md-6 mb-3 mb-md-0">
+                                <h6 class="text-muted mb-2">Tipo de Cambio Actual</h6>
+                                <h4 class="text-primary mb-0" id="exchangeRate">1 PEN = 0.27 USD</h4>
+                            </div>
+                            <div class="col-md-6">
+                                <h6 class="text-muted mb-2">Recibirás</h6>
+                                <h3 class="text-success mb-0" id="receivedAmount">$ 0.00</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Cuenta Origen -->
+                    <div class="mb-4">
+                        <label class="form-label form-label-finanglobal">
+                            <i class="fas fa-wallet me-2"></i>Cuenta de Cargo
+                        </label>
+                        <select class="form-select form-control-finanglobal" id="sourceAccount" required>
+                            <option value="">Selecciona una cuenta</option>
+                            <option value="001">Cuenta Sueldo - ***1234 - S/. 5,450.00</option>
+                            <option value="002">Cuenta Ahorros - ***5678 - S/. 12,300.00</option>
+                            <option value="003">Cuenta Corriente - ***9012 - S/. 8,750.00</option>
+                        </select>
+                    </div>
+
+                    <!-- Cuenta Destino -->
+                    <div class="mb-4">
+                        <label class="form-label form-label-finanglobal">
+                            <i class="fas fa-university me-2"></i>Cuenta de Abono
+                        </label>
+                        <select class="form-select form-control-finanglobal" id="destinationAccount" required>
+                            <option value="">Selecciona una cuenta</option>
+                            <option value="001">Cuenta Sueldo - ***1234</option>
+                            <option value="002">Cuenta Ahorros - ***5678</option>
+                            <option value="003">Cuenta Corriente - ***9012</option>
+                        </select>
+                        <small class="text-muted">El monto convertido se depositará en esta cuenta</small>
+                    </div>
+
+                    <!-- Modal: Condiciones -->
+                    <div class="mb-4">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="acceptTerms" required />
+                            <label class="form-check-label" for="acceptTerms">
+                                Acepto los
+                                <a href="#" data-bs-toggle="modal" data-bs-target="#termsModal">términos y
+                                    condiciones</a>
+                                del servicio de cambio de divisas
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Botones -->
+                    <div class="d-flex gap-3">
+                        <button type="submit" class="btn btn-finanglobal" id="btnExchange">
+                            <i class="fas fa-check me-2"></i>Realizar Cambio
+                        </button>
+                        <button type="button" class="btn btn-outline-danger"
+                            >
+                            Cancelar
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Historial de Cambios -->
+            <div class="card-finanglobal mt-4">
+                <h5 class="mb-3"><i class="fas fa-history me-2"></i>Historial de Cambios</h5>
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Fecha</th>
+                                <th>Operación</th>
+                                <th>Tipo de Cambio</th>
+                                <th>Monto</th>
+                                <th>Estado</th>
+                            </tr>
+                        </thead>
+                        <tbody id="historyTableBody">
+                            <tr>
+                                <td>29/09/2025</td>
+                                <td>PEN → USD</td>
+                                <td>1 PEN = 0.27 USD</td>
+                                <td>S/. 1,000.00 → $ 270.00</td>
+                                <td><span class="badge bg-warning">Pendiente</span></td>
+                            </tr>
+                            <tr>
+                                <td>20/09/2025</td>
+                                <td>USD → PEN</td>
+                                <td>1 USD = 3.70 PEN</td>
+                                <td>$ 500.00 → S/. 1,850.00</td>
+                                <td><span class="badge bg-success">Completado</span></td>
+                            </tr>
+                            <tr>
+                                <td>15/09/2025</td>
+                                <td>PEN → EUR</td>
+                                <td>1 PEN = 0.25 EUR</td>
+                                <td>S/. 2,000.00 → € 500.00</td>
+                                <td><span class="badge bg-success">Completado</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Información Izq -->
+        <div class="col-lg-4">
+            <!-- Tasa del Día = API -->
+            <div class="card-finanglobal mb-4">
+                <h5 class="mb-3"><i class="fas fa-chart-line me-2 text-primary"></i>Tasas del Día</h5>
+                <div class="list-group">
+                    <div class="list-group-item d-flex justify-content-between align-items-center">
+                        <div>
+                            <strong>USD</strong>
+                            <small class="d-block text-muted">Dólar Americano</small>
+                        </div>
+                        <div class="text-end">
+                            <div class="text-success"><i class="fas fa-arrow-up"></i> Compra: S/. 3.70</div>
+                            <div class="text-danger"><i class="fas fa-arrow-down"></i> Venta: S/. 3.73</div>
+                        </div>
+                    </div>
+                    <div class="list-group-item d-flex justify-content-between align-items-center">
+                        <div>
+                            <strong>EUR</strong>
+                            <small class="d-block text-muted">Euro</small>
+                        </div>
+                        <div class="text-end">
+                            <div class="text-success"><i class="fas fa-arrow-up"></i> Compra: S/. 4.05</div>
+                            <div class="text-danger"><i class="fas fa-arrow-down"></i> Venta: S/. 4.10</div>
+                        </div>
+                    </div>
+                </div>
+                <small class="text-muted mt-3 d-block"><i class="fas fa-clock me-1"></i>Actualizado: 29/09/2025
+                    10:30 AM</small>
+            </div>
+
+            <!-- Beneficios -->
+            <div class="card-finanglobal mb-4">
+                <h5 class="mb-3"><i class="fas fa-star me-2 text-warning"></i>Ventajas</h5>
+                <ul class="list-unstyled">
+                    <li class="mb-2">
+                        <i class="fi fi-rs-check-circle text-success me-2"></i>
+                        Mejores tasas del mercado
+                    </li>
+                    <li class="mb-2">
+                        <i class="fi fi-rs-check-circle text-success me-2"></i>
+                        Sin comisiones ocultas
+                    </li>
+                    <li class="mb-2">
+                        <i class="fi fi-rs-check-circle text-success me-2"></i>
+                        Operación inmediata 24/7
+                    </li>
+                    <li class="mb-2">
+                        <i class="fi fi-rs-check-circle text-success me-2"></i>
+                        100% seguro y confiable
+                    </li>
+                    <li class="mb-2">
+                        <i class="fi fi-rs-check-circle text-success me-2"></i>
+                        Abono directo a tu cuenta
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Important Information -->
+            <div class="card-finanglobal">
+                <h5 class="mb-3">
+                    <i class="fas fa-info-circle me-2 text-info"></i>Información Importante
+                </h5>
+                <ul class="list-unstyled small">
+                    <li class="mb-2">• Las tasas están sujetas a cambios según el mercado</li>
+                    <li class="mb-2">• El abono es inmediato en cuentas FinanGlobal</li>
+                    <li class="mb-2">• Operaciones mayores a $10,000 requieren validación adicional</li>
+                    <li class="mb-2">• Servicio disponible las 24 horas del día</li>
+                    <li class="mb-2">• Consulta nuestros <a href="#" data-bs-toggle="modal"
+                            data-bs-target="#termsModal">términos y condiciones</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Condiciones Modal -->
+<div class="modal fade" id="termsModal" tabindex="-1">
+    <div class="modal-dialog modal-lg modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Términos y Condiciones - Cambio de Divisas</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <h6>1. Alcance del Servicio</h6>
+                <p>
+                    El servicio de cambio de divisas permite realizar operaciones de compra y venta de moneda
+                    extranjera de manera inmediata y segura.
+                </p>
+
+                <h6>2. Tipos de Cambio</h6>
+                <p>
+                    Las tasas de cambio son referenciales y pueden variar según las condiciones del mercado.
+                    FinanGlobal se reserva el derecho de actualizar las tasas sin previo aviso.
+                </p>
+
+                <h6>3. Límites de Operación</h6>
+                <p>
+                    Monto mínimo: S/. 10.00 | Monto máximo: S/. 50,000.00 por operación. Operaciones mayores
+                    requieren validación adicional.
+                </p>
+
+                <h6>4. Comisiones</h6>
+                <p>
+                    FinanGlobal no cobra comisiones adicionales por cambio de divisas. La comisión está
+                    incluida en el tipo de cambio ofrecido.
+                </p>
+
+                <h6>5. Tiempos de Procesamiento</h6>
+                <p>
+                    El abono se realiza de forma inmediata en cuentas FinanGlobal. Para cuentas de otros
+                    bancos, el tiempo puede variar según la entidad.
+                </p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-finanglobal" data-bs-dismiss="modal">Entendido</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Correcto Modal -->
+<!-- <div class="modal fade" id="successModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-body text-center py-5">
+                <div class="icon-finanglobal icon-success mb-4">
+                    <i class="fas fa-check"></i>
+                </div>
+                <h3 class="mb-3">¡Cambio Exitoso!</h3>
+                <p class="text-muted mb-4">
+                    Tu operación de cambio de divisas se ha realizado correctamente
+                </p>
+
+                <div class="card-finanglobal-compact text-start mb-4">
+                    <div class="row">
+                        <div class="col-6 mb-3">
+                            <small class="text-muted">Operación</small>
+                            <p class="mb-0 fw-bold" id="successOperation"></p>
+                        </div>
+                        <div class="col-6 mb-3">
+                            <small class="text-muted">Fecha</small>
+                            <p class="mb-0 fw-bold" id="successDate"></p>
+                        </div>
+                        <div class="col-6 mb-3">
+                            <small class="text-muted">Enviaste</small>
+                            <p class="mb-0 fw-bold" id="successSent"></p>
+                        </div>
+                        <div class="col-6 mb-3">
+                            <small class="text-muted">Recibiste</small>
+                            <p class="mb-0 fw-bold text-success" id="successReceived"></p>
+                        </div>
+                        <div class="col-12">
+                            <small class="text-muted">Tipo de Cambio</small>
+                            <p class="mb-0 fw-bold" id="successRate"></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="d-flex gap-2 justify-content-center">
+                    <button type="button" class="btn btn-finanglobal" onclick="window.print()">
+                        <i class="fas fa-print me-2"></i>Imprimir
+                    </button>
+                    <button type="button" class="btn btn-finanglobal-outline" data-bs-dismiss="modal">
+                        Cerrar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->

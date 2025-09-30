@@ -1,0 +1,8 @@
+<div class="sidebar-nav-finanglobal">
+    @for (item of menuOpciones; track item.ruta) {
+    <a [routerLink]="item.ruta" routerLinkActive="active" class="nav-link">
+        <i class="{{item.icono}} icono"></i>
+        <span>{{ item.nombre }}</span>
+    </a>
+    }
+</div>

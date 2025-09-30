@@ -1,0 +1,337 @@
+<!-- Barra de Navegacion -->
+<app-barra-navegacion />
+
+<!-- Page Content -->
+<div class="container-fluid py-4">
+    <!-- Breadcrumb -->
+    <!-- <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="dashboard.html">Inicio</a></li>
+            <li class="breadcrumb-item active">Reclamos</li>
+        </ol>
+    </nav> -->
+
+    <!-- Alerta Informacion -->
+    <div class="alert alert-finanglobal-info mb-4">
+        <div class="d-flex align-items-start">
+            <i class="fas fa-info-circle fs-4 me-3 mt-1"></i>
+            <div>
+                <h6 class="mb-2">Información Importante</h6>
+                <p class="mb-0">Todos los reclamos serán atendidos en un plazo máximo de 30 días calendario según la
+                    normativa vigente. Recibirás notificaciones sobre el estado de tu reclamo en tu correo electrónico
+                    registrado.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">        
+        <div class="col-lg-8">
+            <!-- Mis Reclamos-->
+            <div class="card-finanglobal">
+                <h3 class="mb-4"><i class="fas fa-list me-2"></i>Mis Reclamos</h3>
+
+                <!-- Filtro -->
+                <div class="mb-3">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <select class="form-select form-control-finanglobal" id="filterStatus">
+                                <option value="">Todos los estados</option>
+                                <option value="pendiente">Pendiente</option>
+                                <option value="proceso">En Proceso</option>
+                                <option value="resuelto">Resuelto</option>
+                                <option value="cerrado">Cerrado</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <input type="text" class="form-control form-control-finanglobal" id="searchClaim"
+                                placeholder="Buscar por número o asunto">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Lista de Reclamos -->
+                <div id="claimsList">
+                    <!-- Item 1 -->
+                    <div class="transaction-item-finanglobal mb-3">
+                        <div class="d-flex justify-content-between align-items-start">
+                            <div class="flex-grow-1">
+                                <div class="d-flex align-items-center mb-2">
+                                    <span class="badge bg-warning text-dark me-2">En Proceso</span>
+                                    <strong>REC-2024-001234</strong>
+                                </div>
+                                <h6 class="mb-2">Problema con transferencia no acreditada</h6>
+                                <p class="text-muted small mb-2">
+                                    <i class="fas fa-calendar me-1"></i>Presentado: 15/01/2024
+                                </p>
+                                <p class="text-muted small mb-0">
+                                    <i class="fas fa-clock me-1"></i>Última actualización: Hace 2 días
+                                </p>
+                            </div>
+                            <button class="btn btn-sm btn-finanglobal-outline" data-bs-toggle="modal"
+                                data-bs-target="#claimDetailModal">
+                                Ver Detalles
+                            </button>
+                        </div>
+                        <div class="progress-finanglobal mt-3" style="height: 5px;">
+                            <div class="progress-bar-finanglobal" style="width: 60%"></div>
+                        </div>
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div class="transaction-item-finanglobal mb-3">
+                        <div class="d-flex justify-content-between align-items-start">
+                            <div class="flex-grow-1">
+                                <div class="d-flex align-items-center mb-2">
+                                    <span class="badge bg-success me-2">Resuelto</span>
+                                    <strong>REC-2024-001120</strong>
+                                </div>
+                                <h6 class="mb-2">Cobro indebido de comisión</h6>
+                                <p class="text-muted small mb-2">
+                                    <i class="fas fa-calendar me-1"></i>Presentado: 08/01/2024
+                                </p>
+                                <p class="text-muted small mb-0">
+                                    <i class="fas fa-check-circle me-1 text-success"></i>Resuelto: 22/01/2024
+                                </p>
+                            </div>
+                            <button class="btn btn-sm btn-finanglobal-outline" data-bs-toggle="modal"
+                                data-bs-target="#claimDetailModal">
+                                Ver Detalles
+                            </button>
+                        </div>
+                        <div class="progress-finanglobal mt-3" style="height: 5px;">
+                            <div class="progress-bar-finanglobal"
+                                style="width: 100%; background: var(--success-color);"></div>
+                        </div>
+                    </div>
+
+                    <!-- Item 3 -->
+                    <div class="transaction-item-finanglobal mb-3">
+                        <div class="d-flex justify-content-between align-items-start">
+                            <div class="flex-grow-1">
+                                <div class="d-flex align-items-center mb-2">
+                                    <span class="badge bg-danger me-2">Pendiente</span>
+                                    <strong>REC-2024-001089</strong>
+                                </div>
+                                <h6 class="mb-2">Dificultad para acceder a mi cuenta</h6>
+                                <p class="text-muted small mb-2">
+                                    <i class="fas fa-calendar me-1"></i>Presentado: 28/01/2024
+                                </p>
+                                <p class="text-muted small mb-0">
+                                    <i class="fas fa-hourglass-half me-1"></i>En espera de revisión
+                                </p>
+                            </div>
+                            <button class="btn btn-sm btn-finanglobal-outline" data-bs-toggle="modal"
+                                data-bs-target="#claimDetailModal">
+                                Ver Detalles
+                            </button>
+                        </div>
+                        <div class="progress-finanglobal mt-3" style="height: 5px;">
+                            <div class="progress-bar-finanglobal" style="width: 20%; background: var(--danger-color);">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Paginacion -->
+                <nav class="mt-4">
+                    <ul class="pagination justify-content-center">
+                        <li class="page-item disabled">
+                            <a class="page-link" >Anterior</a>
+                        </li>
+                        <li class="page-item active"><a class="page-link">1</a></li>
+                        <li class="page-item"><a class="page-link" >2</a></li>
+                        <li class="page-item"><a class="page-link" >3</a></li>
+                        <li class="page-item">
+                            <a class="page-link" >Siguiente</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+        <!-- Informacion Lateral -->
+        <div class="col-lg-4">
+            <!-- Estadisiticas -->
+            <div class="card-finanglobal mb-4">
+                <h5 class="mb-3"><i class="fas fa-chart-bar me-2"></i>Estadísticas</h5>
+                <div class="row text-center">
+                    <div class="col-6 mb-3">
+                        <div class="icon-finanglobal-small icon-warning mx-auto mb-2">
+                            <i class="fi fi-br-time-quarter-to align-middle fs-5"></i>
+                        </div>
+                        <h4 class="mb-0">2</h4>
+                        <small class="text-muted">En Proceso</small>
+                    </div>
+                    <div class="col-6 mb-3">
+                        <div class="icon-finanglobal-small icon-success mx-auto mb-2">
+                            <i class="fi fi-rs-check-circle align-middle fs-5"></i>
+                        </div>
+                        <h4 class="mb-0">5</h4>
+                        <small class="text-muted">Resueltos</small>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ayuda -->
+            <div class="card-finanglobal mb-4">
+                <h5 class="mb-3"><i class="fas fa-question-circle me-2"></i>¿Necesitas Ayuda?</h5>
+                <p class="text-muted small mb-3">
+                    Antes de presentar un reclamo, consulta nuestras preguntas frecuentes o contacta con nuestro equipo
+                    de soporte.
+                </p>
+                <div class="d-grid gap-2">
+                    <button class="btn btn-outline-secondary btn-sm">
+                        <i class="fas fa-book me-2"></i>Preguntas Frecuentes
+                    </button>
+                    <button class="btn btn-outline-secondary btn-sm">
+                        <i class="fas fa-headset me-2"></i>Chat en Vivo
+                    </button>
+                    <button class="btn btn-outline-secondary btn-sm">
+                        <i class="fas fa-phone me-2"></i>Llamar al (01) 123-4567
+                    </button>
+                </div>
+            </div>
+
+            <!-- Informacion Importante -->
+            <div class="card-finanglobal">
+                <h5 class="mb-3"><i class="fas fa-lightbulb me-2 text-warning"></i>Información</h5>
+                <ul class="list-unstyled small">
+                    <li class="mb-2">
+                        <i class="fas fa-check-circle text-success me-2"></i>
+                        Tiempo de respuesta: 30 días calendario
+                    </li>
+                    <li class="mb-2">
+                        <i class="fas fa-check-circle text-success me-2"></i>
+                        Seguimiento en tiempo real
+                    </li>
+                    <li class="mb-2">
+                        <i class="fas fa-check-circle text-success me-2"></i>
+                        Notificaciones por email y SMS
+                    </li>
+                    <li class="mb-2">
+                        <i class="fas fa-check-circle text-success me-2"></i>
+                        Atención personalizada
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="claimDetailModal" tabindex="-1">
+    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Detalle del Reclamo #REC-2024-001234</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <!-- Status Badge -->
+                <div class="text-center mb-4">
+                    <span class="badge bg-warning text-dark fs-6">En Proceso</span>
+                </div>
+
+                <!-- Claim Info -->
+                <div class="card-finanglobal-compact mb-3">
+                    <h6 class="mb-3">Información del Reclamo</h6>
+                    <div class="row">
+                        <div class="col-md-6 mb-2">
+                            <small class="text-muted">Tipo:</small>
+                            <p class="mb-0 fw-bold">Problemas con Transferencia</p>
+                        </div>
+                        <div class="col-md-6 mb-2">
+                            <small class="text-muted">Fecha de Presentación:</small>
+                            <p class="mb-0 fw-bold">15/01/2024</p>
+                        </div>
+                        <div class="col-md-6 mb-2">
+                            <small class="text-muted">Operación:</small>
+                            <p class="mb-0 fw-bold">OP-789456123</p>
+                        </div>
+                        <div class="col-md-6 mb-2">
+                            <small class="text-muted">Monto Afectado:</small>
+                            <p class="mb-0 fw-bold text-danger">S/. 1,500.00</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Description -->
+                <div class="card-finanglobal-compact mb-3">
+                    <h6 class="mb-2">Descripción</h6>
+                    <p class="text-muted mb-0">
+                        Realicé una transferencia el día 14/01/2024 por el monto de S/. 1,500.00 hacia la cuenta ***4567
+                        del BCP. El dinero fue descontado de mi cuenta pero no llegó al destinatario después de 24
+                        horas.
+                    </p>
+                </div>
+
+                <!-- Timeline -->
+                <div class="card-finanglobal-compact">
+                    <h6 class="mb-3">Seguimiento</h6>
+                    <div class="timeline">
+                        <div class="mb-3">
+                            <div class="d-flex">
+                                <div class="icon-finanglobal-small icon-success me-3">
+                                    <i class="fas fa-check"></i>
+                                </div>
+                                <div>
+                                    <h6 class="mb-1">Reclamo Recibido</h6>
+                                    <small class="text-muted">15/01/2024 - 10:30 AM</small>
+                                    <p class="small mb-0 mt-1">Tu reclamo ha sido registrado exitosamente.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <div class="d-flex">
+                                <div class="icon-finanglobal-small icon-info me-3">
+                                    <i class="fas fa-search"></i>
+                                </div>
+                                <div>
+                                    <h6 class="mb-1">En Revisión</h6>
+                                    <small class="text-muted">16/01/2024 - 02:15 PM</small>
+                                    <p class="small mb-0 mt-1">Nuestro equipo está investigando tu caso.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <div class="d-flex">
+                                <div class="icon-finanglobal-small icon-warning me-3">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <div>
+                                    <h6 class="mb-1">Pendiente de Respuesta</h6>
+                                    <small class="text-muted">Estimado: 28/01/2024</small>
+                                    <p class="small mb-0 mt-1">Esperamos resolver tu caso pronto.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-finanglobal" onclick="window.print()">
+                    <i class="fas fa-print me-2"></i>Imprimir
+                </button>
+                <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="successModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-body text-center py-5">
+                <div class="icon-finanglobal icon-success mb-3 mx-auto"
+                    style="width: 80px; height: 80px; font-size: 2rem;">
+                    <i class="fas fa-check"></i>
+                </div>
+                <h4 class="mb-3">¡Reclamo Enviado!</h4>
+                <p class="text-muted mb-4">Tu reclamo ha sido registrado exitosamente con el número <strong
+                        id="claimNumber"></strong></p>
+                <button class="btn btn-finanglobal" data-bs-dismiss="modal">Entendido</button>
+            </div>
+        </div>
+    </div>
+</div>

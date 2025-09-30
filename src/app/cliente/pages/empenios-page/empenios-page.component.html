@@ -1,0 +1,400 @@
+<!-- Barra de Navegacion -->
+<app-barra-navegacion />
+
+<!-- Page Content -->
+<div class="container-fluid py-4">
+    <!-- Indice - Navegacion -->
+    <!-- <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="dashboard.html">Inicio</a></li>
+            <li class="breadcrumb-item active">Casa de Empeño</li>
+        </ol>
+    </nav> -->
+
+    <!-- Alerta Informacion -->
+    <div class="alert alert-finanglobal-info mb-4">
+        <div class="row align-items-center">
+            <div class="col-md-8">
+                <h5 class="mb-2">Obtén efectivo inmediato empeñando tus productos de valor</h5>
+                <p class="mb-0">Recibe hasta el 80% del valor de tasación. Recupera tu producto cuando desees.</p>
+            </div>
+            <div class="col-md-4 text-md-end mt-3 mt-md-0">
+                <button class="btn btn-finanglobal" data-bs-toggle="modal" data-bs-target="#newPawnModal">
+                    <i class="fas fa-plus me-2"></i>Nuevo Empeño
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <!-- Seccion Cards -->
+        <div class="col-lg-8">
+            <!-- Lista de Cards -->
+            <div class="card-finanglobal mb-4">
+                <h4 class="mb-4"><i class="fas fa-list me-2"></i>Mis Empeños Activos</h4>
+
+                <div class="row g-3">
+                    <!-- Card 1 -->
+                    <div class="col-md-6">
+                        <div class="card-finanglobal-compact h-100">
+                            <div class="d-flex justify-content-between align-items-start mb-3">
+                                <div>
+                                    <h6 class="mb-1">Collar de Oro 18K</h6>
+                                    <small class="text-muted">Empeño #EP-2025-001</small>
+                                </div>
+                                <span class="badge bg-success">Activo</span>
+                            </div>
+
+                            <div class="mb-3">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <small class="text-muted">Monto Prestado</small>
+                                        <p class="mb-0 fw-bold text-primary">S/. 3,500.00</p>
+                                    </div>
+                                    <div class="col-6">
+                                        <small class="text-muted">Monto a Pagar</small>
+                                        <p class="mb-0 fw-bold text-danger">S/. 3,850.00</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <small class="text-muted d-block">Fecha de Empeño</small>
+                                <p class="mb-1">01/09/2025</p>
+                                <small class="text-muted d-block">Fecha Límite de Recuperación</small>
+                                <p class="mb-0 text-warning fw-bold">01/12/2025 (62 días restantes)</p>
+                            </div>
+
+                            <div class="d-flex gap-2">
+                                <button class="btn btn-sm btn-finanglobal flex-fill text-light">
+                                    <i class="fi fi-ss-rotate-reverse me-2"></i>Recuperar
+                                </button>
+                                <button class="btn btn-sm btn-outline-secondary">
+                                    <i class="fi fi-rs-eye"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="col-md-6">
+                        <div class="card-finanglobal-compact h-100">
+                            <div class="d-flex justify-content-between align-items-start mb-3">
+                                <div>
+                                    <h6 class="mb-1">Laptop Dell XPS 15</h6>
+                                    <small class="text-muted">Empeño #EP-2025-002</small>
+                                </div>
+                                <span class="badge bg-warning">Por Vencer</span>
+                            </div>
+
+                            <div class="mb-3">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <small class="text-muted">Monto Prestado</small>
+                                        <p class="mb-0 fw-bold text-primary">S/. 2,000.00</p>
+                                    </div>
+                                    <div class="col-6">
+                                        <small class="text-muted">Monto a Pagar</small>
+                                        <p class="mb-0 fw-bold text-danger">S/. 2,200.00</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <small class="text-muted d-block">Fecha de Empeño</small>
+                                <p class="mb-1">15/08/2025</p>
+                                <small class="text-muted d-block">Fecha Límite de Recuperación</small>
+                                <p class="mb-0 text-danger fw-bold">15/10/2025 (16 días restantes)</p>
+                            </div>
+
+                            <div class="d-flex gap-2">
+                                <button class="btn btn-sm btn-finanglobal flex-fill text-light">
+                                    <i class="fi fi-ss-rotate-reverse me-2"></i>Recuperar
+                                </button>
+                                <button class="btn btn-sm btn-outline-secondary">
+                                    <i class="fi fi-rs-eye"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="col-md-6">
+                        <div class="card-finanglobal-compact h-100">
+                            <div class="d-flex justify-content-between align-items-start mb-3">
+                                <div>
+                                    <h6 class="mb-1">Reloj Rolex Submariner</h6>
+                                    <small class="text-muted">Empeño #EP-2025-003</small>
+                                </div>
+                                <span class="badge bg-success">Activo</span>
+                            </div>
+
+                            <div class="mb-3">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <small class="text-muted">Monto Prestado</small>
+                                        <p class="mb-0 fw-bold text-primary">S/. 15,000.00</p>
+                                    </div>
+                                    <div class="col-6">
+                                        <small class="text-muted">Monto a Pagar</small>
+                                        <p class="mb-0 fw-bold text-danger">S/. 16,500.00</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <small class="text-muted d-block">Fecha de Empeño</small>
+                                <p class="mb-1">10/09/2025</p>
+                                <small class="text-muted d-block">Fecha Límite de Recuperación</small>
+                                <p class="mb-0 text-success fw-bold">10/12/2025 (72 días restantes)</p>
+                            </div>
+
+                            <div class="d-flex gap-2">
+                                <button class="btn btn-sm btn-finanglobal flex-fill text-light">
+                                    <i class="fi fi-ss-rotate-reverse me-2"></i>Recuperar
+                                </button>
+                                <button class="btn btn-sm btn-outline-secondary">
+                                    <i class="fi fi-rs-eye"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- History -->
+            <div class="card-finanglobal">
+                <h5 class="mb-3"><i class="fas fa-history me-2"></i>Historial de Empeños</h5>
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Código</th>
+                                <th>Producto</th>
+                                <th>Fecha</th>
+                                <th>Monto</th>
+                                <th>Estado</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>#EP-2024-125</td>
+                                <td>Anillo Diamante</td>
+                                <td>20/12/2024</td>
+                                <td>S/. 5,000.00</td>
+                                <td><span class="badge bg-success">Recuperado</span></td>
+                            </tr>
+                            <tr>
+                                <td>#EP-2024-098</td>
+                                <td>iPhone 14 Pro</td>
+                                <td>05/11/2024</td>
+                                <td>S/. 1,800.00</td>
+                                <td><span class="badge bg-success">Recuperado</span></td>
+                            </tr>
+                            <tr>
+                                <td>#EP-2024-067</td>
+                                <td>Cadena Oro 24K</td>
+                                <td>15/09/2024</td>
+                                <td>S/. 2,500.00</td>
+                                <td><span class="badge bg-danger">Vencido</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Informacion Derecha -->
+        <div class="col-lg-4">
+            <!-- Lista de Productos que Aceptamos -->
+            <div class="card-finanglobal mb-4">
+                <h5 class="mb-3"><i class="fas fa-check-circle me-2 text-success"></i>Productos que Aceptamos</h5>
+                <div class="list-group">
+                    <div class="list-group-item">
+                        <div class="d-flex align-items-center">
+                            <div class="icon-finanglobal-small icon-warning me-3">
+                                <i class="fi fi-rr-ring-diamond"></i>
+                            </div>
+                            <div>
+                                <h6 class="mb-0">Joyas</h6>
+                                <small class="text-muted">Oro, plata, diamantes</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="list-group-item">
+                        <div class="d-flex align-items-center">
+                            <div class="icon-finanglobal-small icon-info me-3">
+                                <i class="fi fi-rr-laptop-mobile"></i>
+                            </div>
+                            <div>
+                                <h6 class="mb-0">Electrónica</h6>
+                                <small class="text-muted">Laptops, tablets, smartphones</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="list-group-item">
+                        <div class="d-flex align-items-center">
+                            <div class="icon-finanglobal-small icon-success me-3">
+                                <i class="fi fi-rr-watch-smart"></i>
+                            </div>
+                            <div>
+                                <h6 class="mb-0">Relojes</h6>
+                                <small class="text-muted">Marcas de lujo</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="list-group-item">
+                        <div class="d-flex align-items-center">
+                            <div class="icon-finanglobal-small icon-danger me-3">
+                                <i class="fi fi-rr-camera"></i>
+                            </div>
+                            <div>
+                                <h6 class="mb-0">Equipos Fotográficos</h6>
+                                <small class="text-muted">Cámaras profesionales</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Informacion Pasos -->
+            <div class="card-finanglobal mb-4">
+                <h5 class="mb-3"><i class="fas fa-info-circle me-2 text-info"></i>¿Cómo Funciona?</h5>
+
+                <div class="step-finanglobal active mb-3">
+                    <div class="step-number-finanglobal">1</div>
+                    <h6>Solicita tu Empeño</h6>
+                    <small class="text-muted">Completa el formulario con los datos de tu producto</small>
+                </div>
+
+                <div class="step-finanglobal mb-3">
+                    <div class="step-number-finanglobal">2</div>
+                    <h6>Tasación</h6>
+                    <small class="text-muted">Nuestros expertos evaluarán tu producto en 24 horas</small>
+                </div>
+
+                <div class="step-finanglobal mb-3">
+                    <div class="step-number-finanglobal">3</div>
+                    <h6>Recibe el Dinero</h6>
+                    <small class="text-muted">Aprueba la oferta y recibe el efectivo inmediatamente</small>
+                </div>
+
+                <div class="step-finanglobal">
+                    <div class="step-number-finanglobal">4</div>
+                    <h6>Recupera tu Producto</h6>
+                    <small class="text-muted">Paga el monto acordado y recupera tu producto</small>
+                </div>
+            </div>
+
+            <!-- Terminos -->
+            <div class="card-finanglobal">
+                <h5 class="mb-3"><i class="fas fa-file-contract me-2 text-primary"></i>Condiciones</h5>
+                <ul class="list-unstyled small">
+                    <li class="mb-2">• Tasa de interés: 10% mensual</li>
+                    <li class="mb-2">• Plazo máximo: 90 días</li>
+                    <li class="mb-2">• Renovación disponible</li>
+                    <li class="mb-2">• Seguro incluido sin costo</li>
+                    <li class="mb-2">• Custodia garantizada en bóveda</li>
+                    <li class="mb-2">• Evaluación gratuita</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="newPawnModal" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title"><i class="fas fa-gem me-2"></i>Solicitar Nuevo Empeño</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <form id="pawnForm">
+                    <!-- Tipo de Producto -->
+                    <div class="mb-3">
+                        <label class="form-label form-label-finanglobal">
+                            <i class="fas fa-tag me-2"></i>Tipo de Producto
+                        </label>
+                        <select class="form-select form-control-finanglobal" required>
+                            <option value="">Selecciona el tipo</option>
+                            <option value="joyas">Joyas (Oro, Plata, Diamantes)</option>
+                            <option value="electronica">Electrónica (Laptops, Tablets, Smartphones)</option>
+                            <option value="relojes">Relojes de Lujo</option>
+                            <option value="fotografia">Equipos Fotográficos</option>
+                            <option value="otros">Otros</option>
+                        </select>
+                    </div>
+
+                    <!-- Nombre -->
+                    <div class="mb-3">
+                        <label class="form-label form-label-finanglobal">
+                            <i class="fas fa-box me-2"></i>Nombre del Producto
+                        </label>
+                        <input type="text" class="form-control form-control-finanglobal"
+                            placeholder="Ej: Collar de oro 18K" required>
+                    </div>
+
+                    <!-- Material -->
+                    <div class="mb-3">
+                        <label class="form-label form-label-finanglobal">
+                            <i class="fas fa-gem me-2"></i>Material / Marca
+                        </label>
+                        <input type="text" class="form-control form-control-finanglobal"
+                            placeholder="Ej: Oro 18K, Apple, Samsung, etc." required>
+                    </div>
+
+                    <!-- Descripcion -->
+                    <div class="mb-3">
+                        <label class="form-label form-label-finanglobal">
+                            <i class="fas fa-align-left me-2"></i>Descripción Detallada
+                        </label>
+                        <textarea class="form-control form-control-finanglobal" rows="3"
+                            placeholder="Describe el estado, características y cualquier detalle importante del producto"
+                            required></textarea>
+                    </div>
+
+                    <!-- Monto Estimado -->
+                    <div class="mb-3">
+                        <label class="form-label form-label-finanglobal">
+                            <i class="fas fa-dollar-sign me-2"></i>Monto Estimado que Deseas
+                        </label>
+                        <div class="input-group">
+                            <span class="input-group-text">S/.</span>
+                            <input type="number" class="form-control form-control-finanglobal" placeholder="0.00"
+                                step="0.01" min="100" required>
+                        </div>
+                        <small class="text-muted">El monto final dependerá de la tasación del producto</small>
+                    </div>
+
+                    <!-- Photo -->
+                    <div class="mb-3">
+                        <label class="form-label form-label-finanglobal">
+                            <i class="fas fa-camera me-2"></i>Fotografías del Producto (Opcional)
+                        </label>
+                        <input type="file" class="form-control form-control-finanglobal" accept="image/*" multiple>
+                        <small class="text-muted">Puedes subir hasta 5 fotos para una mejor evaluación</small>
+                    </div>
+
+                    <!-- Terminos -->
+                    <div class="mb-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="acceptPawnTerms" required>
+                            <label class="form-check-label" for="acceptPawnTerms">
+                                Acepto los <a href="#" data-bs-toggle="modal" data-bs-target="#pawnTermsModal">términos
+                                    y condiciones</a> del servicio de empeño
+                            </label>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-finanglobal">
+                    <i class="fas fa-paper-plane me-2"></i>Enviar Solicitud
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,300 @@
+<!-- Barra de Navegacion -->
+<app-barra-navegacion />
+
+<div class="container-fluid py-4">
+    <!-- Navegación Indicador -->
+    <!-- <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="dashboard.html">Inicio</a></li>
+            <li class="breadcrumb-item active">Transferencias</li>
+        </ol>
+    </nav> -->
+
+    <div class="row">
+        <!-- Formulario Transferencia -->
+        <div class="col-lg-8">
+            <div class="card-finanglobal">
+                <h3 class="mb-4"><i class="fi fi-br-money-bill-transfer align-middle me-2"></i>Nueva Transferencia</h3>
+
+                <!-- Pasos -->
+                <!-- <div class="mb-4">
+                    <div class="progress-finanglobal">
+                        <div class="progress-bar-finanglobal" id="progressBar" style="width: 33.33%"></div>
+                    </div>
+                    <div class="d-flex justify-content-between mt-2">
+                        <small class="text-muted"><span class="badge bg-primary">1</span> Datos</small>
+                        <small class="text-muted"><span class="badge bg-secondary">2</span> Confirmación</small>
+                        <small class="text-muted"><span class="badge bg-secondary">3</span> Resultado</small>
+                    </div>
+                </div> -->
+
+                <!-- Datos de la Transferencia -->
+                <div id="step1">
+                    <form id="transferForm">
+                        <!-- Tipo de Transferencia -->
+                        <div class="mb-4">
+                            <label class="form-label form-label-finanglobal">Tipo de Transferencia</label>
+                            <div class="row g-3">
+                                <div class="col-md-4">
+                                    <input type="radio" class="btn-check" name="transferType" id="ownAccount"
+                                        value="own" checked>
+                                    <label class="btn btn-outline-primary w-100" for="ownAccount">
+                                        <i class="fi fi-ts-circle-user d-block fs-3 mb-2"></i>
+                                        Entre mis cuentas
+                                    </label>
+                                </div>
+                                <div class="col-md-4">
+                                    <input type="radio" class="btn-check" name="transferType" id="otherAccount"
+                                        value="other">
+                                    <label class="btn btn-outline-primary w-100" for="otherAccount">
+                                        <i class="fi fi-rs-user d-block fs-3 mb-2"></i>
+                                        A terceros
+                                    </label>
+                                </div>
+                                <div class="col-md-4">
+                                    <input type="radio" class="btn-check" name="transferType" id="interbank"
+                                        value="interbank">
+                                    <label class="btn btn-outline-primary w-100" for="interbank">
+                                        <i class="fi fi-rs-government-budget d-block fs-3 mb-2"></i>
+                                        Interbancaria
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Cuenta Origen -->
+                        <div class="mb-3">
+                            <label class="form-label form-label-finanglobal">
+                                <i class="fi fi-br-wallet me-2"></i>Cuenta de Origen
+                            </label>
+                            <select class="form-select form-control-finanglobal" id="sourceAccount" required>
+                                <option value="">Selecciona una cuenta</option>
+                                <option value="001">Cuenta Sueldo - ***1234 - S/. 5,450.00</option>
+                                <option value="002">Cuenta Ahorros - ***5678 - S/. 12,300.00</option>
+                                <option value="003">Cuenta Corriente - ***9012 - S/. 8,750.00</option>
+                            </select>
+                        </div>
+
+                        <!-- Cuenta Destino -->
+                        <div class="mb-3" id="destinationAccountGroup">
+                            <label class="form-label form-label-finanglobal">
+                                <i class="fi fi-rs-government-budget me-2"></i>Cuenta de Destino
+                            </label>
+                            <input type="text" class="form-control form-control-finanglobal" id="destinationAccount"
+                                placeholder="Número de cuenta" maxlength="20" required>
+                        </div>
+
+                        <!-- Seleccion de Banco -->
+                        <div class="mb-3 d-none" id="bankGroup">
+                            <label class="form-label form-label-finanglobal">
+                                <i class="fas fa-building me-2"></i>Banco Destino
+                            </label>
+                            <select class="form-select form-control-finanglobal" id="destinationBank">
+                                <option value="">Selecciona un banco</option>
+                                <option value="bcp">Banco de Crédito del Perú (BCP)</option>
+                                <option value="bbva">BBVA Continental</option>
+                                <option value="interbank">Interbank</option>
+                                <option value="scotiabank">Scotiabank</option>
+                            </select>
+                        </div>
+
+                        <!-- Nombre Destino -->
+                        <div class="mb-3">
+                            <label class="form-label form-label-finanglobal">
+                                <i class="fi fi-rs-user me-2"></i>Nombre del Beneficiario
+                            </label>
+                            <input type="text" class="form-control form-control-finanglobal" id="recipientName"
+                                placeholder="Nombre completo del beneficiario" required>
+                        </div>
+
+                        <!-- Monto -->
+                        <div class="mb-3">
+                            <label class="form-label form-label-finanglobal">
+                                <i class="fas fa-money-bill-wave me-2"></i>Monto a Transferir
+                            </label>
+                            <div class="input-group">
+                                <span class="input-group-text">S/.</span>
+                                <input type="number" class="form-control form-control-finanglobal" id="amount"
+                                    placeholder="0.00" step="0.01" min="1" required>
+                            </div>
+                            <small class="text-muted">Monto máximo: S/. 10,000.00 por operación</small>
+                        </div>
+
+                        <!-- Descripcion -->
+                        <div class="mb-3">
+                            <label class="form-label form-label-finanglobal">
+                                <i class="fas fa-comment me-2"></i>Descripción (Opcional)
+                            </label>
+                            <textarea class="form-control form-control-finanglobal" id="description" rows="3"
+                                placeholder="Motivo de la transferencia" maxlength="200"></textarea>
+                            <small class="text-muted"><span id="charCount">0</span>/200 caracteres</small>
+                        </div>
+
+                        <!-- Schedule Transfer -->
+                        <!--    <div class="mb-4">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="scheduleTransfer">
+                                <label class="form-check-label" for="scheduleTransfer">
+                                    <i class="fas fa-clock me-2"></i>Programar transferencia
+                                </label>
+                            </div>
+                            <div class="mt-2 d-none" id="scheduleDateGroup">
+                                <input type="date" class="form-control form-control-finanglobal" id="scheduleDate">
+                            </div>
+                        </div> -->
+
+                        <!-- Action Buttons -->
+                        <div class="d-flex gap-3">
+                            <button type="button" class="btn btn-finanglobal" id="btnContinue">
+                                Continuar <i class="fas fa-arrow-right ms-2"></i>
+                            </button>
+                            <button type="button" class="btn btn-outline-danger"
+                                >
+                                Cancelar
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Step 2: Confirmation -->
+                <div id="step2" class="d-none">
+                    <div class="alert alert-finanglobal-info">
+                        <i class="fas fa-info-circle me-2"></i>
+                        Revisa cuidadosamente los datos antes de confirmar la transferencia
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <div class="card-finanglobal-compact">
+                                <h6 class="text-muted mb-2">Cuenta de Origen</h6>
+                                <p class="mb-0" id="confirmSource"></p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <div class="card-finanglobal-compact">
+                                <h6 class="text-muted mb-2">Cuenta de Destino</h6>
+                                <p class="mb-0" id="confirmDestination"></p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <div class="card-finanglobal-compact">
+                                <h6 class="text-muted mb-2">Beneficiario</h6>
+                                <p class="mb-0" id="confirmRecipient"></p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <div class="card-finanglobal-compact">
+                                <h6 class="text-muted mb-2">Monto</h6>
+                                <p class="mb-0 fs-4 fw-bold text-primary" id="confirmAmount"></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card-finanglobal-compact mb-4" id="confirmDescriptionBox">
+                        <h6 class="text-muted mb-2">Descripción</h6>
+                        <p class="mb-0" id="confirmDescription"></p>
+                    </div>
+
+                    <div class="d-flex gap-3">
+                        <button type="button" class="btn btn-finanglobal" id="btnConfirm">
+                            <i class="fas fa-check me-2"></i>Confirmar Transferencia
+                        </button>
+                        <button type="button" class="btn btn-outline-secondary" id="btnBack">
+                            <i class="fas fa-arrow-left me-2"></i>Regresar
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Step 3: Result -->
+                <div id="step3" class="d-none text-center">
+                    <div class="icon-finanglobal icon-success mb-4">
+                        <i class="fas fa-check"></i>
+                    </div>
+                    <h3 class="mb-3">¡Transferencia Exitosa!</h3>
+                    <p class="text-muted mb-4">Tu transferencia ha sido procesada correctamente</p>
+
+                    <div class="card-finanglobal-compact text-start mb-4">
+                        <div class="row">
+                            <div class="col-6 mb-3">
+                                <small class="text-muted">Número de Operación</small>
+                                <p class="mb-0 fw-bold" id="operationNumber"></p>
+                            </div>
+                            <div class="col-6 mb-3">
+                                <small class="text-muted">Fecha y Hora</small>
+                                <p class="mb-0 fw-bold" id="operationDate"></p>
+                            </div>
+                            <div class="col-12">
+                                <small class="text-muted">Monto Transferido</small>
+                                <p class="mb-0 fw-bold fs-4 text-success" id="finalAmount"></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="d-flex gap-3 justify-content-center">
+                        <button type="button" class="btn btn-finanglobal" onclick="window.print()">
+                            <i class="fas fa-print me-2"></i>Imprimir Constancia
+                        </button>
+                        <button type="button" class="btn btn-finanglobal-outline"
+                            onclick="window.location.href='dashboard.html'">
+                            <i class="fas fa-home me-2"></i>Volver al Inicio
+                        </button>
+                        <button type="button" class="btn btn-outline-secondary" id="btnNewTransfer">
+                            Nueva Transferencia
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sidebar Info -->
+        <div class="col-lg-4">
+            <!-- Quick Transfer -->
+            <div class="card-finanglobal mb-4">
+                <h5 class="mb-3"><i class="fas fa-bolt me-2 text-warning"></i>Transferencias Rápidas</h5>
+                <div class="list-group">
+                    <a class="list-group-item list-group-item-action">
+                        <div class="d-flex align-items-center">
+                            <div class="user-avatar-finanglobal me-3">MP</div>
+                            <div>
+                                <h6 class="mb-0">María Pérez</h6>
+                                <small class="text-muted">***4567</small>
+                            </div>
+                        </div>
+                    </a>
+                    <a class="list-group-item list-group-item-action">
+                        <div class="d-flex align-items-center">
+                            <div class="user-avatar-finanglobal me-3">CG</div>
+                            <div>
+                                <h6 class="mb-0">Carlos García</h6>
+                                <small class="text-muted">***8901</small>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Security Tips -->
+            <div class="card-finanglobal">
+                <h5 class="mb-3"><i class="fas fa-shield-alt me-2 text-success"></i>Consejos de Seguridad</h5>
+                <ul class="list-unstyled">
+                    <li class="mb-2">
+                        <i class="fas fa-check-circle text-success me-2"></i>
+                        Verifica siempre los datos antes de confirmar
+                    </li>
+                    <li class="mb-2">
+                        <i class="fas fa-check-circle text-success me-2"></i>
+                        No compartas tus claves con nadie
+                    </li>
+                    <li class="mb-2">
+                        <i class="fas fa-check-circle text-success me-2"></i>
+                        Guarda el comprobante de cada operación
+                    </li>
+                    <li class="mb-2">
+                        <i class="fas fa-check-circle text-success me-2"></i>
+                        Las transferencias son irreversibles
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

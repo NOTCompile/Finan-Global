@@ -1,0 +1,255 @@
+<!-- Barra de Navegacion -->
+<app-barra-navegacion />
+
+<!-- Page Content -->
+<div class="container-fluid py-4">
+    <!-- Breadcrumb -->
+    <!-- <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="dashboard.html">Inicio</a></li>
+            <li class="breadcrumb-item active">Mi Perfil</li>
+        </ol>
+    </nav> -->
+
+    <div class="row">
+        <!-- Perfil -->
+        <div class="col-lg-4">
+            <!-- Perfil Card -->
+            <div class="card-finanglobal text-center mb-4">
+                <div class="position-relative d-inline-block mx-auto mb-3">
+                    <div class="user-avatar-finanglobal mx-auto"
+                        style="width: 100px; height: 100px; font-size: 2.5rem;">NC</div>                    
+                </div>
+                <h4 class="mb-1">{{envs.companyDev}}</h4>
+                <p class="text-muted mb-3">notcompile@email.com</p>
+                <div class="d-flex justify-content-center gap-2 mb-3">
+                    <span class="badge bg-success">Cliente Activo</span>                    
+                </div>
+                <div class="row text-center">
+                    <div class="col-4">
+                        <h5 class="mb-0">3</h5>
+                        <small class="text-muted">Cuentas</small>
+                    </div>
+                    <div class="col-4">
+                        <h5 class="mb-0">2</h5>
+                        <small class="text-muted">Tarjetas</small>
+                    </div>
+                    <div class="col-4">
+                        <h5 class="mb-0">5</h5>
+                        <small class="text-muted">Años</small>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Acciones Rapidas -->
+            <div class="card-finanglobal">
+                <h6 class="mb-3"><i class="fas fa-bolt me-2 text-warning"></i>Acciones Rápidas</h6>
+                <div class="d-grid gap-2">
+                    <button class="btn btn-outline-secondary text-center">
+                        <i class="fas fa-download me-2"></i>Descargar Estado de Cuenta
+                    </button>
+                    <button class="btn btn-outline-secondary text-center">
+                        <i class="fas fa-file-pdf me-2"></i>Certificados Bancarios
+                    </button>
+                    <button class="btn btn-outline-secondary text-center">
+                        <i class="fas fa-history me-2"></i>Historial Completo
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Perfil Detalles -->
+        <div class="col-lg-8">
+            <!-- Tabs -->
+            <div class="card-finanglobal">
+                <ul class="nav nav-tabs" id="profileTabs" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="info-tab" data-bs-toggle="tab" data-bs-target="#info"
+                            type="button">
+                            <i class="fas fa-user me-2"></i>Información Personal
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="security-tab" data-bs-toggle="tab" data-bs-target="#security"
+                            type="button">
+                            <i class="fas fa-lock me-2"></i>Seguridad
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="preferences-tab" data-bs-toggle="tab" data-bs-target="#preferences"
+                            type="button">
+                            <i class="fas fa-cog me-2"></i>Preferencias
+                        </button>
+                    </li>
+                </ul>
+
+                <div class="tab-content p-4" id="profileTabsContent">
+                    <!-- Personal Information Tab -->
+                    <div class="tab-pane fade show active" id="info" role="tabpanel">
+                        <div class="d-flex justify-content-between align-items-center mb-4">
+                            <h5><i class="fas fa-user me-2"></i>Datos Personales</h5>
+                            <button class="btn btn-outline-warning" id="btnEditInfo">
+                                Editar
+                            </button>
+                        </div>
+
+                        <form id="personalInfoForm">
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label form-label-finanglobal">
+                                        <i class="fas fa-id-card me-2"></i>DNI
+                                    </label>
+                                    <input type="text" class="form-control form-control-finanglobal" value="72345678"
+                                        disabled>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label form-label-finanglobal">
+                                        <i class="fas fa-calendar me-2"></i>Fecha de Nacimiento
+                                    </label>
+                                    <input type="date" class="form-control form-control-finanglobal" value="1990-05-15"
+                                        disabled>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label form-label-finanglobal">
+                                        <i class="fas fa-user me-2"></i>Nombres
+                                    </label>
+                                    <input type="text" class="form-control form-control-finanglobal" value="N"
+                                        disabled>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label form-label-finanglobal">
+                                        <i class="fas fa-user me-2"></i>Apellidos
+                                    </label>
+                                    <input type="text" class="form-control form-control-finanglobal" value="T"
+                                        disabled>
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label form-label-finanglobal">
+                                    <i class="fas fa-envelope me-2"></i>Correo Electrónico
+                                </label>
+                                <input type="email" class="form-control form-control-finanglobal"
+                                    value="notcompile@email.com" disabled>
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label form-label-finanglobal">
+                                    <i class="fas fa-phone me-2"></i>Número de Celular
+                                </label>
+                                <input type="tel" class="form-control form-control-finanglobal" value="987654321"
+                                    disabled>
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label form-label-finanglobal">
+                                    <i class="fas fa-map-marker-alt me-2"></i>Dirección
+                                </label>
+                                <input type="text" class="form-control form-control-finanglobal"
+                                    value="Calle Rodriguez Ballon 207, Arequipa" disabled>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label form-label-finanglobal">
+                                        <i class="fas fa-city me-2"></i>Ciudad
+                                    </label>
+                                    <input type="text" class="form-control form-control-finanglobal" value="Arequipa"
+                                        disabled>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label form-label-finanglobal">
+                                        <i class="fas fa-flag me-2"></i>País
+                                    </label>
+                                    <input type="text" class="form-control form-control-finanglobal" value="Perú"
+                                        disabled>
+                                </div>
+                            </div>
+
+                            <div class="d-none" id="saveButtons">
+                                <button type="submit" class="btn btn-finanglobal">
+                                    <i class="fas fa-save me-2"></i>Guardar Cambios
+                                </button>
+                                <button type="button" class="btn btn-outline-secondary" id="btnCancelEdit">
+                                    Cancelar
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Seguridad -->
+                    <div class="tab-pane fade" id="security" role="tabpanel">
+                        <h5 class="mb-4"><i class="fas fa-lock me-2"></i>Seguridad y Contraseña</h5>
+
+                        <!-- Change Password -->
+                        <div class="card-finanglobal-compact mb-4">
+                            <h6 class="mb-3">Cambiar Contraseña</h6>
+                            <form id="passwordForm">
+                                <div class="mb-3">
+                                    <label class="form-label form-label-finanglobal">Contraseña Actual</label>
+                                    <input type="password" class="form-control form-control-finanglobal"
+                                        placeholder="Ingresa tu contraseña actual">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label form-label-finanglobal">Nueva Contraseña</label>
+                                    <input type="password" class="form-control form-control-finanglobal"
+                                        placeholder="Ingresa tu nueva contraseña">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label form-label-finanglobal">Confirmar Nueva Contraseña</label>
+                                    <input type="password" class="form-control form-control-finanglobal"
+                                        placeholder="Confirma tu nueva contraseña">
+                                </div>
+                                <button type="submit" class="btn btn-finanglobal">
+                                    <i class="fas fa-key me-2"></i>Actualizar Contraseña
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!-- Preferencias Tab -->
+                    <div class="tab-pane fade" id="preferences" role="tabpanel">
+                        <h5 class="mb-4"><i class="fas fa-cog me-2"></i>Preferencias de Cuenta</h5>
+                        <!-- Language & Currency -->
+                        <div class="card-finanglobal-compact mb-4">
+                            <h6 class="mb-3">Idioma y Moneda</h6>
+                            <div class="mb-3">
+                                <label class="form-label form-label-finanglobal">Idioma Preferido</label>
+                                <select class="form-select form-control-finanglobal">
+                                    <option value="es" selected>Español</option>
+                                    <option value="en">English</option>
+                                    <option value="pt">Português</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label form-label-finanglobal">Moneda Principal</label>
+                                <select class="form-select form-control-finanglobal">
+                                    <option value="PEN" selected>Soles Peruanos (S/.)</option>
+                                    <option value="USD">Dólares Americanos ($)</option>
+                                    <option value="EUR">Euros (€)</option>
+                                </select>
+                            </div>
+                        </div>
+                        <button type="button" class="btn btn-finanglobal">
+                            <i class="fas fa-save me-2"></i>Guardar Preferencias
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Danger Zone -->
+            <div class="card-finanglobal mt-4">
+                <h5 class="text-danger mb-3"><i class="fas fa-exclamation-triangle me-2"></i>Zona de Peligro</h5>
+                <p class="text-muted">Estas acciones son permanentes y no se pueden deshacer.</p>
+                <div class="d-flex gap-2">
+                    <button class="btn btn-danger">
+                        Eliminar Cuenta
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

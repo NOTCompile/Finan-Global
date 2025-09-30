@@ -1,0 +1,19 @@
+<div class="contenedor">
+    <div class="contenedor-sesion">
+        <div class="contenedor-sesion-img">
+            <img class="img"
+                src="img/img_sesion.avif"
+                alt="Img_Sesion">
+        </div>
+
+        <form class="contenedor-sesion-datos">
+            <h2 class="titulo">{{ envs.projectName }}</h2>
+            <span class="text">Usuario: </span>
+            <input class="input-datos" placeholder="Ingresa tu usuario" type="text">
+            <span class="text">Contraseña: </span>
+            <input class="input-datos" placeholder="Ingresa tu contraseña" type="text">
+            <a class="link" href="">¿Ha olvidado su contraseña?</a>
+            <button class="btn" [routerLink]="['/inicio-cliente']" type="button">Iniciar Sesión</button>
+        </form>
+    </div>
+</div>

@@ -1,5 +1,588 @@
 /* You can add global styles to this file, and also import other style files */
-* {
-    margin: 0;
+
+@import "@flaticon/flaticon-uicons/css/all/all.css";
+/* Colores */
+:root {
+    --primary-color: #0F172A;       /* Azul oscuro casi negro */
+    --secondary-color: #1E293B;     /* Azul-gris grafito */
+    --accent-color: #3B82F6;        /* Azul vibrante moderno  */
+    
+    --success-color: #2E7D32;        /* Verde confiable para éxito */
+    --warning-color: #F9A825;        /* Amarillo fuerte para advertencias */
+    --danger-color: #C62828;         /* Rojo serio para errores/críticos */
+    
+    --dark-color: #1C1C1E;           /* Gris oscuro moderno */
+    --light-color: #F4F6F8;          /* Fondo claro sutil */
+    
+    --gray-100: #F1F3F5;
+    --gray-200: #E0E3E7;
+    --gray-300: #CCD1D9;
+    --gray-600: #6B7280;
+    --gray-700: #4B5563;
+}
+
+
+
+/* Estilos Globales */
+body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow-x: hidden;
+    background-color: var(--gray-100);
+}
+
+/* Estilos Barra de Navegacion */
+.navbar-finanglobal {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 20px rgba(30, 58, 138, 0.1);
+}
+
+.navbar-brand-finanglobal {
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: white !important;
+}
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color), var(--accent-color));
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><radialGradient id="a" cx="50%" cy="50%"><stop offset="0%" stop-color="%23ffffff" stop-opacity="0.1"/><stop offset="100%" stop-color="%23ffffff" stop-opacity="0"/></radialGradient></defs><circle cx="200" cy="200" r="150" fill="url(%23a)"/><circle cx="800" cy="400" r="200" fill="url(%23a)"/><circle cx="400" cy="800" r="180" fill="url(%23a)"/></svg>');
+    opacity: 0.3;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+/* Buttons */
+.btn-finanglobal {
+    background: linear-gradient(45deg, var(--accent-color), #0891b2);
+    border: none;
+    color: white;
+    padding: 12px 30px;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(6, 182, 212, 0.3);
+}
+
+.btn-finanglobal:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(6, 182, 212, 0.4);
+    color: white;
+}
+
+.btn-finanglobal-outline {
+    border: 2px solid var(--secondary-color);
+    color: var(--secondary-color);
+    background: transparent;
+    padding: 10px 28px;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+
+.btn-finanglobal-outline:hover {
+    background: var(--secondary-color);
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* Cards */
+.card-finanglobal {
+    background: white;
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    border: none;
+}
+
+.card-finanglobal:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+}
+
+.card-finanglobal-compact {
+    background: white;
+    border-radius: 15px;
+    padding: 1.5rem;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    border: none;
+}
+
+.card-finanglobal-compact:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Iconos */
+.icon-finanglobal {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+    color: white;
+    font-size: 1.5rem;
+}
+
+.icon-finanglobal-small {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1rem;
+}
+
+.icon-success {
+    background: linear-gradient(135deg, var(--success-color), #059669);
+}
+
+.icon-warning {
+    background: linear-gradient(135deg, var(--warning-color), #d97706);
+}
+
+.icon-danger {
+    background: linear-gradient(135deg, var(--danger-color), #dc2626);
+}
+
+.icon-info {
+    background: linear-gradient(135deg, var(--accent-color), #0891b2);
+}
+
+/* Forms */
+.form-finanglobal {
+    background: white;
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+.form-control-finanglobal {
+    border: 2px solid var(--gray-200);
+    border-radius: 10px;
+    padding: 12px 15px;
+    transition: all 0.3s ease;
+}
+
+.form-control-finanglobal:focus {
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 0 0.2rem rgba(59, 130, 246, 0.25);
+}
+
+.form-label-finanglobal {
+    font-weight: 600;
+    color: var(--gray-700);
+    margin-bottom: 0.5rem;
+}
+
+/* Sidebar Estilos */
+.sidebar-finanglobal {
+    background: linear-gradient(135deg, var(--primary-color), var(--dark-color));
+    min-height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 220px;
+    z-index: 1000;
+    transition: all 0.3s ease;    
+}
+
+.sidebar-finanglobal.collapsed {
+    width: 70px;
+}
+
+/* Titulo Navegacion Lateral */
+.sidebar-brand-finanglobal {
+    padding: 1.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    color: white;
+    display: flex;
+    justify-content: center;
+    font-size: 1.5rem;    
+}
+
+.sidebar-brand-finanglobal h4 {
+    color: white;
+    margin: 0;
+    font-weight: 700;
+}
+
+/* Contenido Opciones Navegacion Lateral */
+.sidebar-nav-finanglobal {
+    padding: 1rem 0;    
+}
+
+.sidebar-nav-finanglobal .nav-link {
+    color: rgba(255, 255, 255, 0.8);
+    padding: 0.75rem 1.5rem;
+    border: none;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.sidebar-nav-finanglobal .nav-link:hover,
+.sidebar-nav-finanglobal .nav-link.active {
+    color: white;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.sidebar-nav-finanglobal .nav-link i {
+    width: 20px;
+    margin-right: 0.75rem;
+}
+
+.main-content-finanglobal {    
+    transition: all 0.3s ease;
+    min-height: 100vh;
+    margin-left: 220px;
+}
+
+.main-content-finanglobal.expanded {
+    margin-left: 70px;
+}
+
+.top-navbar-finanglobal {
+    background: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+/* Estilos del Dashboard - Card Azul*/
+.balance-card-finanglobal {
+    background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
+    color: white;
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 10px 30px rgba(59, 130, 246, 0.3);
+}
+
+.stat-card-finanglobal {
+    background: white;
+    border-radius: 15px;
+    padding: 1.5rem;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+
+.stat-card-finanglobal:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Acciones Rapidas - Cards */
+.quick-action-card-finanglobal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: white;
+    border-radius: 15px;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+}
+
+.quick-action-card-finanglobal:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    text-decoration: none;
+    color: inherit;
+}
+
+.transaction-item-finanglobal {
+    background: white;
+    border-radius: 10px;
+    padding: 1rem;
+    margin-bottom: 0.5rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.transaction-item-finanglobal:hover {
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* User Avatar */
+.user-avatar-finanglobal {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 600;
+}
+
+/* Login styles */
+.login-container-finanglobal {
+    min-height: 100vh;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-card-finanglobal {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    padding: 3rem;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 450px;
+}
+
+/* Process Steps */
+.step-finanglobal {
+    position: relative;
+    padding: 2rem;
+    background: white;
+    border-radius: 15px;
+    margin-bottom: 1rem;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.step-finanglobal.active {
+    border-left: 4px solid var(--secondary-color);
+    background: linear-gradient(90deg, rgba(59, 130, 246, 0.05), white);
+}
+
+.step-finanglobal.completed {
+    border-left: 4px solid var(--success-color);
+    background: linear-gradient(90deg, rgba(16, 185, 129, 0.05), white);
+}
+
+.step-number-finanglobal {
+    position: absolute;
+    left: -15px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: var(--secondary-color);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.step-number-finanglobal.completed {
+    background: var(--success-color);
+}
+
+/* Progress Bar */
+.progress-finanglobal {
+    height: 10px;
+    border-radius: 5px;
+    background: var(--gray-200);
+    overflow: hidden;
+}
+
+.progress-bar-finanglobal {
+    background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
+    transition: width 0.3s ease;
+}
+
+/* Alert styles */
+.alert-finanglobal {
+    border-radius: 15px;
+    border: none;
+    padding: 1rem 1.5rem;
+}
+
+.alert-finanglobal-success {
+    background: linear-gradient(90deg, rgba(16, 185, 129, 0.1), rgba(16, 185, 129, 0.05));
+    border-left: 4px solid var(--success-color);
+    color: var(--success-color);
+}
+
+.alert-finanglobal-danger {
+    background: linear-gradient(90deg, rgba(239, 68, 68, 0.1), rgba(239, 68, 68, 0.05));
+    border-left: 4px solid var(--danger-color);
+    color: var(--danger-color);
+}
+
+.alert-finanglobal-warning {
+    background: linear-gradient(90deg, rgba(245, 158, 11, 0.1), rgba(245, 158, 11, 0.05));
+    border-left: 4px solid var(--warning-color);
+    color: var(--warning-color);
+}
+
+.alert-finanglobal-info {
+    background: linear-gradient(90deg, rgba(6, 182, 212, 0.1), rgba(6, 182, 212, 0.05));
+    border-left: 4px solid var(--accent-color);
+    color: var(--accent-color);
+}
+
+/* Feature highlights */
+.feature-highlight-finanglobal {
+    background: linear-gradient(135deg, #f8fafc, #e2e8f0);
+    border-left: 4px solid var(--secondary-color);
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+
+/* Stats section */
+.stats-section-finanglobal {
+    background: var(--dark-color);
+    color: white;
+    padding: 5rem 0;
+}
+
+.stat-number-finanglobal {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--accent-color);
+}
+
+/* Floating elements animation */
+.floating-elements-finanglobal {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.floating-elements-finanglobal::before,
+.floating-elements-finanglobal::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    animation: float 6s ease-in-out infinite;
+}
+
+.floating-elements-finanglobal::before {
+    width: 100px;
+    height: 100px;
+    top: 20%;
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.floating-elements-finanglobal::after {
+    width: 150px;
+    height: 150px;
+    top: 60%;
+    right: 10%;
+    animation-delay: 3s;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .sidebar-finanglobal {
+        transform: translateX(-100%);
+    }
+    
+    .sidebar-finanglobal.show {
+        transform: translateX(0);
+    }
+    
+    .main-content-finanglobal {
+        margin-left: 0;
+    }
+    
+    .hero-section {
+        min-height: auto;
+        padding: 4rem 0;
+    }
+    
+    .login-card-finanglobal {
+        margin: 1rem;
+        padding: 2rem;
+    }
+    
+    .card-finanglobal {
+        margin-bottom: 1rem;
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .stat-number-finanglobal {
+        font-size: 2rem;
+    }
+    
+    .icon-finanglobal {
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+    }
+    
+    .btn-finanglobal {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--gray-100);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--secondary-color);
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-color);
+}
+
+/* Spinner Cargando */
+.spinner-finanglobal {
+    border: 3px solid var(--gray-200);
+    border-top: 3px solid var(--secondary-color);
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
