@@ -4,6 +4,7 @@ import { provideRouter } from '@angular/router';
 import { routes } from './app.routes';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { provideHttpClient, withFetch } from '@angular/common/http';
+import { erole } from './shared/interfaces/ERole';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -15,5 +16,6 @@ export const appConfig: ApplicationConfig = {
       useClass: HashLocationStrategy,
     },
     provideHttpClient(withFetch()),
+
   ]
 };

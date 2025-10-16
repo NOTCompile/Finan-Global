@@ -1,0 +1,49 @@
+<!-- Top Navbar -->
+<div class="top-navbar-finanglobal">
+  <div class="container-fluid">
+    <div class="row align-items-center">
+      <div class="col">
+        <button class="btn btn-toggle-sidebar me-3 " (click)="onToggleClick()"> <!-- Boton de Sidebar -->
+          <i class="fi fi-rr-grip-dots align-middle"></i>
+        </button>
+        <span class="fs-4 fw-bold">{{envs.projectLabel}}</span>        
+      </div>
+
+      <div class="col-auto">
+        <div class="d-flex align-items-center">
+          <!-- Alerta -->
+          <!-- <div class="me-3 position-relative">
+            <i class="fi fi-tr-cowbell fs-5 text-muted"></i>
+            <span
+              class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+            >
+              3              
+            </span>
+          </div> -->
+          <!-- Menu -->
+          <div class="dropdown">
+            <a class="d-flex align-items-center text-decoration-none" href="#" data-bs-toggle="dropdown">
+              <div class="user-avatar-finanglobal me-2">NC</div>
+              <span class="d-none d-md-inline">{{ envs.companyDev }}</span>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end">
+              <li>
+                <a class="dropdown-item" [routerLink]="['/inicio-cliente/cliente-perfil']"><i class="fas fa-user me-2"></i>Mi Perfil</a>
+              </li>
+              <li>
+                <a class="dropdown-item"><i class="fas fa-cog me-2"></i>Configuración</a>
+              </li>
+              <li>
+                <hr class="dropdown-divider" />
+              </li>
+              <li>
+                <a class="dropdown-item" [routerLink]="['/inicio-sesion']"><i
+                    class="fas fa-sign-out-alt me-2"></i>Cerrar Sesión</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

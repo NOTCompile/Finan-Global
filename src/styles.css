@@ -1,27 +1,35 @@
 /* You can add global styles to this file, and also import other style files */
 
 @import "@flaticon/flaticon-uicons/css/all/all.css";
+
+/* Importacion de iconos */
 /* Colores */
 :root {
-    --primary-color: #0F172A;       /* Azul oscuro casi negro */
-    --secondary-color: #1E293B;     /* Azul-gris grafito */
-    --accent-color: #3B82F6;        /* Azul vibrante moderno  */
-    
-    --success-color: #2E7D32;        /* Verde confiable para éxito */
-    --warning-color: #F9A825;        /* Amarillo fuerte para advertencias */
-    --danger-color: #C62828;         /* Rojo serio para errores/críticos */
-    
-    --dark-color: #1C1C1E;           /* Gris oscuro moderno */
-    --light-color: #F4F6F8;          /* Fondo claro sutil */
-    
+    --primary-color: #0F172A;
+    /* Azul oscuro casi negro */
+    --secondary-color: #1E293B;
+    /* Azul-gris grafito */
+    --accent-color: #3B82F6;
+    /* Azul vibrante moderno  */
+
+    --success-color: #2E7D32;
+    /* Verde confiable para éxito */
+    --warning-color: #F9A825;
+    /* Amarillo fuerte para advertencias */
+    --danger-color: #C62828;
+    /* Rojo serio para errores/críticos */
+
+    --dark-color: #1C1C1E;
+    /* Gris oscuro moderno */
+    --light-color: #F4F6F8;
+    /* Fondo claro sutil */
+
     --gray-100: #F1F3F5;
     --gray-200: #E0E3E7;
     --gray-300: #CCD1D9;
     --gray-600: #6B7280;
     --gray-700: #4B5563;
 }
-
-
 
 /* Estilos Globales */
 body {
@@ -204,11 +212,18 @@ body {
     left: 0;
     width: 220px;
     z-index: 1000;
-    transition: all 0.3s ease;    
+    transition: all 0.3s ease;
 }
 
+.btn-oculto {
+    display: none;
+}
+
+/* Hidden del navbar al sidebar */
 .sidebar-finanglobal.collapsed {
-    width: 70px;
+    width: 0;
+    overflow: hidden;
+    transition: width 0.3s ease;
 }
 
 /* Titulo Navegacion Lateral */
@@ -218,7 +233,7 @@ body {
     color: white;
     display: flex;
     justify-content: center;
-    font-size: 1.5rem;    
+    font-size: 1.5rem;
 }
 
 .sidebar-brand-finanglobal h4 {
@@ -229,7 +244,7 @@ body {
 
 /* Contenido Opciones Navegacion Lateral */
 .sidebar-nav-finanglobal {
-    padding: 1rem 0;    
+    padding: 1rem 0;
 }
 
 .sidebar-nav-finanglobal .nav-link {
@@ -253,14 +268,15 @@ body {
     margin-right: 0.75rem;
 }
 
-.main-content-finanglobal {    
+.main-content-finanglobal {
     transition: all 0.3s ease;
     min-height: 100vh;
     margin-left: 220px;
 }
 
+/* Nav Expand */
 .main-content-finanglobal.expanded {
-    margin-left: 70px;
+    margin-left: 0px;
 }
 
 .top-navbar-finanglobal {
@@ -274,8 +290,7 @@ body {
 
 /* Estilos del Dashboard - Card Azul*/
 .balance-card-finanglobal {
-    background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
-    color: white;
+    background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));    
     border-radius: 20px;
     padding: 2rem;
     box-shadow: 0 10px 30px rgba(59, 130, 246, 0.3);
@@ -503,34 +518,33 @@ body {
 }
 
 @keyframes float {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-20px); }
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
 }
 
 /* Responsivo */
 @media (max-width: 768px) {
-    .sidebar-finanglobal {
-        transform: translateX(-100%);
+    .balance-card-finanglobal {
+        margin-top: 1rem;
     }
-    
-    .sidebar-finanglobal.show {
-        transform: translateX(0);
-    }
-    
-    .main-content-finanglobal {
-        margin-left: 0;
-    }
-    
+
     .hero-section {
         min-height: auto;
         padding: 4rem 0;
     }
-    
+
     .login-card-finanglobal {
         margin: 1rem;
         padding: 2rem;
     }
-    
+
     .card-finanglobal {
         margin-bottom: 1rem;
         padding: 1.5rem;
@@ -538,16 +552,33 @@ body {
 }
 
 @media (max-width: 576px) {
+    .sidebar-finanglobal {
+        position: fixed;
+        z-index: 1000;
+    }
+
+    .btn-oculto {
+        display: none;
+    }
+
+    .main-content-finanglobal {
+        margin-left: -0px;
+    }
+
+    .balance-card-finanglobal {
+        margin-top: 1rem;
+    }
+
     .stat-number-finanglobal {
         font-size: 2rem;
     }
-    
+
     .icon-finanglobal {
         width: 50px;
         height: 50px;
         font-size: 1.2rem;
     }
-    
+
     .btn-finanglobal {
         padding: 10px 20px;
         font-size: 0.9rem;
@@ -583,6 +614,11 @@ body {
 }
 
 @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
 }

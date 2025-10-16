@@ -1,0 +1,9 @@
+<!-- Contenedor de Menu Lateral -->
+<div class="sidebar-finanglobal" id="sidebar" [class.collapsed]="isSidebarCollapsed">
+  <app-menu-lateral [collapsed]="isSidebarCollapsed"  />
+</div>
+
+<!-- Contenedor de Contenido -->
+<div class="main-content-finanglobal" id="mainContent" [class.expanded]="isSidebarCollapsed">
+  <router-outlet />
+</div>
