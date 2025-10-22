@@ -1,9 +1,8 @@
-<!-- Navigation -->
+<!-- Barra de Navegacion -->
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top navbar-finanglobal">
   <div class="container">
-    <a class="navbar-brand navbar-brand-finanglobal" href="index.html">
-      <i class="fas fa-university me-2"></i>
-      FinanGlobal S.A.C
+    <a class="navbar-brand navbar-brand-finanglobal" href="#ingresar">
+      <i class="fas fa-university me-2"></i>FinanGlobal S.A.C
     </a>
     <button
       class="navbar-toggler"
@@ -25,7 +24,7 @@
           <a class="nav-link" href="#contacto">Contacto</a>
         </li>
         <li class="nav-item">
-          <a class="btn btn-outline-light ms-2" href="login.html">
+          <a class="btn btn-outline-light ms-2" href="#ingresar">
             <i class="fas fa-sign-in-alt me-1"></i>Ingresar
           </a>
         </li>
@@ -34,40 +33,30 @@
   </div>
 </nav>
 
-<!-- Hero Section -->
-<section class="hero-section d-flex align-items-center">
+<!-- Indice Seccion -->
+<section class="index-section d-flex align-items-center" id="ingresar">
   <div class="floating-elements-finanglobal"></div>
-  <div class="container hero-content">
+  <div class="container index-content">
     <div class="row align-items-center">
-      <div class="col-lg-6">
-        <h1 class="display-4 fw-bold text-white mb-4">Banca Digital del Futuro</h1>
-        <p class="lead text-white mb-4">
+      <div class="col-md-6">
+        <h1 class="display-4 fw-bold text-white">Banca Digital del Futuro</h1>
+        <p class="lead text-white text-center mb-4 text-info">
           Gestiona tu dinero de forma inteligente con FinanGlobal. Transferencias instantáneas,
           préstamos rápidos, cambio de divisas y servicios de empeño, todo en un solo lugar.
         </p>
-        <div class="d-flex gap-3 flex-wrap">
-          <a href="apertura-cuenta.html" class="btn btn-finanglobal btn-lg">
-            <i class="fas fa-user-plus me-2"></i>Abrir Cuenta
-          </a>
-          <button
-            class="btn btn-outline-light btn-lg"
-            data-bs-toggle="modal"
-            data-bs-target="#demoModal"
-          >
-            <i class="fas fa-play me-2"></i>Ver Demo
-          </button>
-        </div>
       </div>
       <div class="col-lg-6 mt-4 mt-lg-0">
         <div class="card-finanglobal">
-          <h3 class="text-center mb-4">Acceso Rápido</h3>
+          <h3 class="text-center mb-4">Ingresar al Sistema</h3>
+
+          <!-- Formulario Iniciar Sesión -->
           <form action="dashboard.html" method="post">
             <div class="mb-3">
-              <label class="form-label form-label-finanglobal">DNI o Email</label>
+              <label class="form-label form-label-finanglobal">Correo Electrónico o Usuario</label>
               <input
                 type="text"
                 class="form-control form-control-finanglobal"
-                placeholder="Ingresa tu DNI o email"
+                placeholder="Ingresa tu Correo Electrónico o Usuario"
                 required
               />
             </div>
@@ -88,10 +77,14 @@
               <i class="fas fa-sign-in-alt me-2"></i>Ingresar
             </button>
           </form>
+
+          <!-- ¿? Contraseña -->
           <div class="text-center mt-3">
             <a href="#" class="text-decoration-none">¿Olvidaste tu contraseña?</a>
           </div>
           <hr />
+
+          <!-- Crear cuenta -->
           <div class="text-center">
             <small class="text-muted">¿No tienes cuenta?</small><br />
             <a href="apertura-cuenta.html" class="btn btn-finanglobal-outline mt-2">
@@ -111,7 +104,9 @@
       <h2 class="display-5 fw-bold">Nuestros Servicios</h2>
       <p class="lead text-muted">Soluciones financieras completas para todas tus necesidades</p>
     </div>
+    <!-- Cards -->
     <div class="row g-4">
+      <!-- Card 1 -->
       <div class="col-md-6 col-lg-4">
         <div class="card-finanglobal text-center h-100">
           <div class="icon-finanglobal">
@@ -122,11 +117,10 @@
             Abre tu cuenta bancaria de forma rápida y segura con beneficios exclusivos y sin costos
             de mantenimiento.
           </p>
-          <a href="apertura-cuenta.html" class="btn btn-finanglobal-outline mt-auto"
-            >Abrir Cuenta</a
-          >
         </div>
       </div>
+
+      <!-- Card 2 -->
       <div class="col-md-6 col-lg-4">
         <div class="card-finanglobal text-center h-100">
           <div class="icon-finanglobal">
@@ -137,11 +131,10 @@
             Transfiere dinero de forma instantánea entre cuentas propias, a terceros y
             transferencias interbancarias.
           </p>
-          <a href="transferencia.html" class="btn btn-finanglobal-outline mt-auto"
-            >Transferir Ahora</a
-          >
         </div>
       </div>
+
+      <!-- Card 3 -->
       <div class="col-md-6 col-lg-4">
         <div class="card-finanglobal text-center h-100">
           <div class="icon-finanglobal">
@@ -152,9 +145,10 @@
             Cambia monedas con las mejores tasas del mercado. Dólares, euros y más divisas
             disponibles.
           </p>
-          <a href="cambio-divisas.html" class="btn btn-finanglobal-outline mt-auto">Ver Tasas</a>
         </div>
       </div>
+
+      <!-- Card 4 -->
       <div class="col-md-6 col-lg-4">
         <div class="card-finanglobal text-center h-100">
           <div class="icon-finanglobal">
@@ -164,11 +158,10 @@
           <p class="text-muted mb-4">
             Solicita préstamos personales con tasas competitivas y aprobación rápida en línea.
           </p>
-          <a href="solicitar-prestamo.html" class="btn btn-finanglobal-outline mt-auto"
-            >Solicitar Préstamo</a
-          >
         </div>
       </div>
+
+      <!-- Card 5 -->
       <div class="col-md-6 col-lg-4">
         <div class="card-finanglobal text-center h-100">
           <div class="icon-finanglobal">
@@ -179,11 +172,10 @@
             Solicita tu tarjeta de débito o crédito con beneficios exclusivos y seguridad
             garantizada.
           </p>
-          <a href="solicitar-tarjeta.html" class="btn btn-finanglobal-outline mt-auto"
-            >Solicitar Tarjeta</a
-          >
         </div>
       </div>
+
+      <!-- Card 6 -->
       <div class="col-md-6 col-lg-4">
         <div class="card-finanglobal text-center h-100">
           <div class="icon-finanglobal">
@@ -193,21 +185,23 @@
           <p class="text-muted mb-4">
             Empeña tus productos de valor y obtén liquidez inmediata con tasas preferenciales.
           </p>
-          <a href="empenar-producto.html" class="btn btn-finanglobal-outline mt-auto"
-            >Empeñar Producto</a
-          >
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Features Section -->
+<!-- Sección Motivo -->
 <section class="py-5 bg-light">
   <div class="container">
-    <div class="row align-items-center">
-      <div class="col-lg-6">
-        <h2 class="display-6 fw-bold">¿Por qué elegir FinanGlobal?</h2>
+    <!-- Titulo Sección Motivo -->
+    <div class="text-center mb-5">
+      <h2 class="display-6 fw-bold">¿Por qué elegir FinanGlobal?</h2>
+    </div>
+
+    <div class="row g-4">
+      <!-- Motivo 1 -->
+      <div class="col-md-6 col-lg-6">
         <div class="feature-highlight-finanglobal mb-4">
           <h5><i class="fas fa-shield-alt text-primary me-2"></i>Seguridad Garantizada</h5>
           <p class="mb-0">
@@ -215,6 +209,10 @@
             proteger tu información y dinero.
           </p>
         </div>
+      </div>
+
+      <!-- Motivo 2 -->
+      <div class="col-md-6 col-lg-6">
         <div class="feature-highlight-finanglobal mb-4">
           <h5><i class="fas fa-clock text-primary me-2"></i>Disponibilidad 24/7</h5>
           <p class="mb-0">
@@ -222,6 +220,10 @@
             cualquier dispositivo.
           </p>
         </div>
+      </div>
+
+      <!-- Motivo 3 -->
+      <div class="col-md-6 col-lg-6">
         <div class="feature-highlight-finanglobal mb-4">
           <h5><i class="fas fa-mobile-alt text-primary me-2"></i>Multiplataforma</h5>
           <p class="mb-0">
@@ -229,6 +231,10 @@
             total comodidad.
           </p>
         </div>
+      </div>
+
+      <!-- Motivo 4 -->
+      <div class="col-md-6 col-lg-6">
         <div class="feature-highlight-finanglobal">
           <h5><i class="fas fa-users text-primary me-2"></i>Atención Personalizada</h5>
           <p class="mb-0">
@@ -237,18 +243,11 @@
           </p>
         </div>
       </div>
-      <div class="col-lg-6">
-        <img
-          src="img/banking-features.svg"
-          alt="Características de FinanGlobal"
-          class="img-fluid rounded"
-        />
-      </div>
     </div>
   </div>
 </section>
 
-<!-- Stats Section -->
+<!-- Sección Datos -->
 <section class="stats-section-finanglobal">
   <div class="container">
     <div class="row text-center">
@@ -272,7 +271,7 @@
   </div>
 </section>
 
-<!-- About Section -->
+<!-- Sección Nosotros -->
 <section id="nosotros" class="py-5">
   <div class="container">
     <div class="row">
@@ -315,7 +314,7 @@
   </div>
 </section>
 
-<!-- Contact Section -->
+<!-- Sección Contáctanos -->
 <section id="contacto" class="py-5 bg-light">
   <div class="container">
     <div class="row">
@@ -328,7 +327,7 @@
                 <i class="fas fa-phone"></i>
               </div>
               <h5>Teléfono</h5>
-              <p class="mb-0">+51 (01) 123-4567</p>
+              <p class="mb-0">+51 963023181</p>
               <small class="text-muted"
                 >Lunes a Viernes: 8:00 AM - 8:00 PM<br />Sábados: 9:00 AM - 2:00 PM</small
               >
@@ -400,21 +399,16 @@
       </div>
       <div class="col-md-4 mb-4">
         <h6>Información de Contacto</h6>
-        <p>
-          <i class="fas fa-map-marker-alt me-2"></i>Av. Javier Prado Este 1234, San Isidro, Lima
-        </p>
-        <p><i class="fas fa-phone me-2"></i>+51 (01) 123-4567</p>
+        <p><i class="fas fa-map-marker-alt me-2"></i>Calle Rodriguez Ballón 207-A</p>
+        <p><i class="fas fa-phone me-2"></i>+51 963023181</p>
         <p><i class="fas fa-envelope me-2"></i>contacto@finanglobal.com.pe</p>
         <p><i class="fas fa-clock me-2"></i>Atención 24/7 Online</p>
       </div>
     </div>
     <hr class="my-4" />
     <div class="row align-items-center">
-      <div class="col-md-6">
-        <p class="mb-0">&copy; 2024 FinanGlobal S.A.C. Todos los derechos reservados.</p>
-      </div>
-      <div class="col-md-6 text-md-end">
-        <small class="text-muted"> Supervisado por la SBS | RUC: 20123456789 </small>
+      <div class="col-md-12 text-center">
+        <p class="mb-0">&copy; 2025 FinanGlobal S.A.C. Todos los derechos reservados.</p>
       </div>
     </div>
   </div>
