@@ -1,1 +1,117 @@
-<p>register-page works!</p>,
+<div class="login-container-finanglobal">
+  <div class="floating-elements-finanglobal"></div>
+  <div class="container mt-4">
+    <div class="row justify-content-center">
+      <div class="col-md-6 col-lg-3">
+        <!-- Security Info -->
+        <div class="card-finanglobal-compact">
+          <div class="row align-items-center">
+            <div class="col-2">
+              <i class="fas fa-shield-alt fs-2 text-success"></i>
+            </div>
+            <div class="col-10">
+              <h6 class="mb-1">Conexión Segura</h6>
+              <small class="text-muted"> Tu información está protegida con encriptación. </small>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-5">
+        <div class="login-card-finanglobal">
+          <!-- Encabezado -->
+          <div class="text-center mb-4">
+            <div class="icon-finanglobal mb-3">
+              <i class="fas fa-university"></i>
+            </div>
+            <h2 class="fw-bold">FinanGlobal S.A.C</h2>
+            <p class="text-muted">Registre su cuenta</p>
+          </div>
+
+          <!-- Login Form -->
+          <form id="loginForm" action="dashboard.html" method="post">
+            <div class="mb-3">
+              <label class="form-label form-label-finanglobal">
+                <i class="fas fa-user me-2"></i>Correo Electrónico
+              </label>
+              <input
+                type="text"
+                class="form-control form-control-finanglobal"
+                id="email"
+                name="email"
+                placeholder="Ingrese su Correo Electrónico"
+                required
+                autocomplete="email"
+              />
+              <div class="invalid-feedback">Por favor ingresa un email válido</div>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label form-label-finanglobal">
+                <i class="fas fa-user me-2"></i>DNI
+              </label>
+              <input
+                type="text"
+                class="form-control form-control-finanglobal"
+                id="dni"
+                name="dni"
+                placeholder="Ingresa su DNI"
+                required
+                autocomplete="dni"
+              />
+              <div class="invalid-feedback">Por favor ingresa su DNI</div>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label form-label-finanglobal">
+                <i class="fas fa-lock me-2"></i>Contraseña
+              </label>
+              <div class="input-group">
+                <input
+                  type="password"
+                  class="form-control form-control-finanglobal"
+                  id="password"
+                  name="password"
+                  placeholder="Ingresa su contraseña"
+                  required
+                  autocomplete="current-password"
+                />
+                <button class="btn btn-outline-secondary" type="button" id="togglePassword">
+                  <i class="fas fa-eye"></i>
+                </button>
+              </div>
+              <div class="invalid-feedback">La contraseña es obligatoria</div>
+            </div>
+
+            <div class="mb-3 d-flex justify-content-between align-items-center">
+              <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="rememberMe" name="rememberMe" />
+                <label class="form-check-label" for="rememberMe"> Recordarme </label>
+              </div>
+              <a
+                href="#"
+                class="text-decoration-none small"
+                data-bs-toggle="modal"
+                data-bs-target="#forgotPasswordModal"
+              >
+                ¿Olvidaste tu contraseña?
+              </a>
+            </div>
+
+            <button type="submit" class="btn btn-finanglobal w-100 btn-lg mb-3" id="loginBtn">
+              <span class="login-text"> <i class="fa-solid fa-user-plus me-2"></i>Registrar </span>
+              <span class="spinner-finanglobal d-none"></span>
+            </button>
+          </form>
+
+          <!-- Back to Home -->
+          <div class="text-center mt-3">
+            <a [routerLink]="['/index']" class="text-decoration-none small">
+              <i class="fas fa-arrow-left me-1"></i>Volver al inicio
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
