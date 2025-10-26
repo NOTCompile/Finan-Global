@@ -50,33 +50,47 @@
           <h3 class="text-center mb-4">Ingresar al Sistema</h3>
 
           <!-- Formulario Iniciar Sesión -->
-          <form action="dashboard.html" method="post">
+          <form [formGroup]="form" (ngSubmit)="login()">
             <div class="mb-3">
-              <label class="form-label form-label-finanglobal">Correo Electrónico o Usuario</label>
+              <label class="form-label form-label-finanglobal" form="email"
+                >Correo Electrónico o Usuario</label
+              >
               <input
-                type="text"
+                id="correo"
+                type="email"
                 class="form-control form-control-finanglobal"
-                placeholder="Ingresa tu Correo Electrónico o Usuario"
-                required
+                formControlName="correo"
+                placeholder="Ingrese su Correo Electrónico"
               />
             </div>
+
             <div class="mb-3">
-              <label class="form-label form-label-finanglobal">Contraseña</label>
+              <label class="form-label form-label-finanglobal" form="email">Contraseña</label>
               <input
+                id="contrasena"
                 type="password"
                 class="form-control form-control-finanglobal"
-                placeholder="Contraseña"
-                required
+                formControlName="contrasena"
+                placeholder="Ingrese su Contraseña"
               />
             </div>
+
             <div class="mb-3 form-check">
               <input type="checkbox" class="form-check-input" id="rememberMe" />
               <label class="form-check-label" for="rememberMe">Recordarme</label>
             </div>
-            <button type="submit" class="btn btn-finanglobal w-100 btn-lg">
+
+            <button
+              type="submit"
+              [disabled]="form.invalid"
+              class="btn btn-finanglobal w-100 btn-lg"
+            >
               <i class="fas fa-sign-in-alt me-2"></i>Ingresar
             </button>
           </form>
+          @if (errorMsg()) {
+          <p class="text-danger">{{ errorMsg() }}</p>
+          }
 
           <!-- ¿? Contraseña -->
           <div class="text-center mt-3">
