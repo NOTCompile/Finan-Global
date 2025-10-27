@@ -1,10 +1,11 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { AuthService } from 'src/app/shared/services/authService';
 import { SidebarService } from 'src/app/shared/services/sidebarService';
+import { RouterLink } from "@angular/router";
 
 @Component({
   selector: 'app-navbar-pawnshop',
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './navbar-pawnshop.html',
   styleUrl: './navbar-pawnshop.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -19,5 +20,11 @@ export class NavbarPawnshop {
   logout() {
     this.authService.logout();
     location.reload();
+  }
+  
+  /* Usuario Actual */
+  authData = inject(AuthService);
+  get user() {
+    return this.authData.user();
   }
 }
