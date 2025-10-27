@@ -1,6 +1,3 @@
-/* You can add global styles to this file, and also import other style files */
-
-/* Importacion de iconos */
 /* Colores */
 :root {
   --primary-color: #0f172a;
@@ -67,6 +64,36 @@
   background: var(--secondary-color);
   color: white;
   transform: translateY(-2px);
+}
+
+/* Sidebar Style Global */
+.sidebar-finanglobal {
+  background: linear-gradient(135deg, var(--primary-color), var(--dark-color));
+  min-height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 220px;
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+/* Sidebar Mode Collapse */
+.sidebar-finanglobal.collapsed {
+  width: 0;
+  overflow: hidden;
+  transition: width 0.3s ease;
+}
+
+/* Main Content Global */
+.main-content-finanglobal {
+  transition: all 0.3s ease;
+  min-height: 100vh;
+  margin-left: 220px;
+}
+
+.main-content-finanglobal.expanded {
+  margin-left: 0px;
 }
 
 /* Cards */
@@ -165,91 +192,6 @@
   margin-bottom: 0.5rem;
 }
 
-/* Sidebar Estilos */
-.sidebar-finanglobal {
-  background: linear-gradient(135deg, var(--primary-color), var(--dark-color));
-  min-height: 100vh;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 220px;
-  z-index: 1000;
-  transition: all 0.3s ease;
-}
-
-.btn-oculto {
-  display: none;
-}
-
-/* Hidden del navbar al sidebar */
-.sidebar-finanglobal.collapsed {
-  width: 0;
-  overflow: hidden;
-  transition: width 0.3s ease;
-}
-
-/* Titulo Navegacion Lateral */
-.sidebar-brand-finanglobal {
-  padding: 1.5rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  color: white;
-  display: flex;
-  justify-content: center;
-  font-size: 1.5rem;
-}
-
-.sidebar-brand-finanglobal h4 {
-  color: white;
-  margin: 0;
-  font-weight: 700;
-}
-
-/* Contenido Opciones Navegacion Lateral */
-.sidebar-nav-finanglobal {
-  padding: 1rem 0;
-}
-
-.sidebar-nav-finanglobal .nav-link {
-  color: rgba(255, 255, 255, 0.8);
-  padding: 0.75rem 1.5rem;
-  border: none;
-  transition: all 0.3s ease;
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-}
-
-.sidebar-nav-finanglobal .nav-link:hover,
-.sidebar-nav-finanglobal .nav-link.active {
-  color: white;
-  background: rgba(255, 255, 255, 0.1);
-}
-
-.sidebar-nav-finanglobal .nav-link i {
-  width: 20px;
-  margin-right: 0.75rem;
-}
-
-.main-content-finanglobal {
-  transition: all 0.3s ease;
-  min-height: 100vh;
-  margin-left: 220px;
-}
-
-/* Nav Expand */
-.main-content-finanglobal.expanded {
-  margin-left: 0px;
-}
-
-.top-navbar-finanglobal {
-  background: white;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  padding: 1rem 0;
-  position: sticky;
-  top: 0;
-  z-index: 999;
-}
-
 /* Estilos del Dashboard - Card Azul*/
 .balance-card-finanglobal {
   background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
@@ -305,19 +247,6 @@
 
 .transaction-item-finanglobal:hover {
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-}
-
-/* User Avatar */
-.user-avatar-finanglobal {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  font-weight: 600;
 }
 
 /* Process Steps */
@@ -494,15 +423,6 @@
 }
 
 @media (max-width: 576px) {
-  .sidebar-finanglobal {
-    position: fixed;
-    z-index: 1000;
-  }
-
-  .btn-oculto {
-    display: none;
-  }
-
   .main-content-finanglobal {
     margin-left: -0px;
   }

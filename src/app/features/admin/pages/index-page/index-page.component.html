@@ -1,1 +1,8 @@
-<p>ADMIN INDEX</p>,
+<div class="sidebar-finanglobal" id="sidebar" [class.collapsed]="isSidebarCollapsed">
+  <app-sidebar-admin [collapsed]="isSidebarCollapsed"></app-sidebar-admin>
+</div>
+
+<div class="main-content-finanglobal" id="mainContent" [class.expanded]="isSidebarCollapsed">
+  <app-navbar-admin></app-navbar-admin>
+  <router-outlet></router-outlet>
+</div>

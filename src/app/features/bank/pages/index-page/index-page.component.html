@@ -1,1 +1,8 @@
-<p>BANK PAGE</p>,
+<div class="sidebar-finanglobal" id="sidebar" [class.collapsed]="isSidebarCollapsed">
+  <app-sidebar-bank [collapsed]="isSidebarCollapsed"></app-sidebar-bank>
+</div>
+
+<div class="main-content-finanglobal" id="mainContent" [class.expanded]="isSidebarCollapsed">
+  <app-navbar-bank></app-navbar-bank>
+  <router-outlet></router-outlet>
+</div>

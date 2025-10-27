@@ -1,0 +1,15 @@
+<!-- Title -->
+<div class="text-light align-items-center p-3 d-flex sidebar-brand-finanglobal">
+  <i class="fa-solid fa-building-columns me-2"></i>
+  <span class="brand-text">FinanGlobal</span>
+</div>
+
+<!-- Options -->
+<div class="sidebar-nav-finanglobal">
+  @for (item of optionSidebar; track item.id) {
+  <a [routerLink]="item.route" routerLinkActive="active" class="nav-link">
+    <i class="{{ item.icon }}"></i>
+    <span>{{ item.name }}</span>
+  </a>
+  }
+</div>

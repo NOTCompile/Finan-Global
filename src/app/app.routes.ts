@@ -47,7 +47,7 @@ export const routes: Routes = [
       },
       {
         path: '**',
-        redirectTo: 'admin',
+        redirectTo: 'dashboard',
       },
     ],
   },
@@ -73,7 +73,7 @@ export const routes: Routes = [
       },
       {
         path: '**',
-        redirectTo: 'bank',
+        redirectTo: 'dashboard',
       },
     ],
   },
@@ -98,12 +98,8 @@ export const routes: Routes = [
           import('./features/client/pages/customer-service-page/customer-service-page.component'),
       },
       {
-        path: 'account-page',
+        path: 'account-user',
         loadComponent: () => import('./features/client/pages/account-page/account-page.component'),
-      },
-      {
-        path: 'bank',
-        loadComponent: () => import('./features/client/pages/bank-page/bank-page.component'),
       },
       {
         path: 'cards',
@@ -126,7 +122,7 @@ export const routes: Routes = [
       },
       {
         path: '**',
-        redirectTo: 'client',
+        redirectTo: 'dashboard',
       },
     ],
   },
@@ -152,7 +148,7 @@ export const routes: Routes = [
       },
       {
         path: '**',
-        redirectTo: 'pawnshop',
+        redirectTo: 'dashboard',
       },
     ],
   },

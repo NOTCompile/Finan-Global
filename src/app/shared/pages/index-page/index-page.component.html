@@ -47,13 +47,13 @@
       </div>
       <div class="col-lg-6 mt-4 mt-lg-0">
         <div class="card-finanglobal">
-          <h3 class="text-center mb-4">Ingresar al Sistema</h3>
+          <h2 class="text-center mb-4">Iniciar Sesión</h2>
 
           <!-- Formulario Iniciar Sesión -->
           <form [formGroup]="form" (ngSubmit)="login()">
             <div class="mb-3">
               <label class="form-label form-label-finanglobal" form="email"
-                >Correo Electrónico o Usuario</label
+                ><i class="fas fa-user me-2"></i>Correo Electrónico</label
               >
               <input
                 id="correo"
@@ -65,7 +65,9 @@
             </div>
 
             <div class="mb-3">
-              <label class="form-label form-label-finanglobal" form="email">Contraseña</label>
+              <label class="form-label form-label-finanglobal" form="email"
+                ><i class="fas fa-lock me-2"></i>Contraseña</label
+              >
               <input
                 id="contrasena"
                 type="password"

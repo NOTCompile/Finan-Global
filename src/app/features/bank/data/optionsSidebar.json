@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "name": "Dashboard",
+    "icon": "fa-solid fa-gauge",
+    "route": "/bank/dashboard"
+  },
+  {
+    "id": 2,
+    "name": "Clientes",
+    "icon": "fa-solid fa-users",
+    "route": "/bank/client"
+  },
+  {
+    "id": 3,
+    "name": "Solicitudes",
+    "icon": "fa-solid fa-book",
+    "route": "/bank/solicitude"
+  }
+]
