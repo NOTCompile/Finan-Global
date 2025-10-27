@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "name": "Dashboard",
+    "icon": "fa-solid fa-gauge",
+    "route": "/admin/dashboard"
+  },
+  {
+    "id": 2,
+    "name": "Cuentas Bancarias",
+    "icon": "fa-solid fa-wallet",
+    "route": "/admin/bank"
+  },
+  {
+    "id": 3,
+    "name": "Tarjetas",
+    "icon": "fa-solid fa-money-check-dollar",
+    "route": "/admin/card"
+  },
+  {
+    "id": 3,
+    "name": "Transferencias",
+    "icon": "fa-solid fa-money-bill-transfer",
+    "route": "/admin/transfer"
+  },
+  {
+    "id": 4,
+    "name": "Empeños",
+    "icon": "fa-solid fa-shop",
+    "route": "/admin/pawnshop"
+  },
+    {
+    "id": 5,
+    "name": "Clientes",
+    "icon": "fa-solid fa-users",
+    "route": "/admin/client"
+  },
+  {
+    "id": 6,
+    "name": "Usuarios",
+    "icon": "fa-solid fa-users-gear",
+    "route": "/admin/user"
+  }
+]

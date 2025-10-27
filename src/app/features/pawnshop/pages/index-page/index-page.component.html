@@ -1,1 +1,8 @@
-<p>EMPEñO PAGE</p>,
+<div class="sidebar-finanglobal" id="sidebar" [class.collapsed]="isSidebarCollapsed">
+  <app-sidebar-pawnshop  [collapsed]="isSidebarCollapsed"></app-sidebar-pawnshop>
+</div>
+
+<div class="main-content-finanglobal" id="mainContent" [class.expanded]="isSidebarCollapsed">
+  <app-navbar-pawnshop></app-navbar-pawnshop>
+  <router-outlet></router-outlet>
+</div>
