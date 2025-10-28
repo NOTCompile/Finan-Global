@@ -1,23 +1,16 @@
-/* Colores */
+/* ============================ Global Styles ============================ */
+/* ====== Global Colors ====== */
 :root {
   --primary-color: #0f172a;
-  /* Azul oscuro casi negro */
   --secondary-color: #1e293b;
-  /* Azul-gris grafito */
-  --accent-color: #3b82f6;
-  /* Azul vibrante moderno  */
 
+  --accent-color: #3b82f6;
   --success-color: #2e7d32;
-  /* Verde confiable para éxito */
   --warning-color: #f9a825;
-  /* Amarillo fuerte para advertencias */
   --danger-color: #c62828;
-  /* Rojo serio para errores/críticos */
 
   --dark-color: #1c1c1e;
-  /* Gris oscuro moderno */
   --light-color: #f4f6f8;
-  /* Fondo claro sutil */
 
   --gray-100: #f1f3f5;
   --gray-200: #e0e3e7;
@@ -26,14 +19,14 @@
   --gray-700: #4b5563;
 }
 
-/* Estilos Globales */
+/* ====== Global Body ====== */
 :root body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   overflow-x: hidden;
   background-color: var(--gray-100);
 }
 
-/* Estilo Global Boton */
+/* ====== Global Button ====== */
 :root .btn-finanglobal {
   background: linear-gradient(45deg, var(--accent-color), #0891b2);
   border: none;
@@ -50,7 +43,6 @@
   color: white;
 }
 
-/* Estilo Global Boton - Outline */
 :root .btn-finanglobal-outline {
   border: 2px solid var(--secondary-color);
   color: var(--secondary-color);
@@ -66,7 +58,7 @@
   transform: translateY(-2px);
 }
 
-/* Sidebar Style Global */
+/* ====== Global Sidebar ====== */
 .sidebar-finanglobal {
   background: linear-gradient(135deg, var(--primary-color), var(--dark-color));
   min-height: 100vh;
@@ -78,14 +70,13 @@
   transition: all 0.3s ease;
 }
 
-/* Sidebar Mode Collapse */
 .sidebar-finanglobal.collapsed {
   width: 0;
   overflow: hidden;
   transition: width 0.3s ease;
 }
 
-/* Main Content Global */
+/* ====== Global Main Content ====== */
 .main-content-finanglobal {
   transition: all 0.3s ease;
   min-height: 100vh;
@@ -96,7 +87,7 @@
   margin-left: 0px;
 }
 
-/* Cards */
+/* ====== Cards ====== */
 .card-finanglobal {
   background: white;
   border-radius: 20px;
@@ -125,8 +116,8 @@
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
 
-/* Iconos */
-.icon-finanglobal {
+/* ====== Global Icons Style ====== */
+:root .icon-finanglobal {
   width: 60px;
   height: 60px;
   background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
@@ -139,7 +130,7 @@
   font-size: 1.5rem;
 }
 
-.icon-finanglobal-small {
+:root .icon-finanglobal-small {
   width: 40px;
   height: 40px;
   border-radius: 8px;
@@ -166,7 +157,7 @@
   background: linear-gradient(135deg, var(--accent-color), #0891b2);
 }
 
-/* Forms */
+/* ====== Global Forms ====== */
 .form-finanglobal {
   background: white;
   border-radius: 20px;
@@ -190,27 +181,6 @@
   font-weight: 600;
   color: var(--gray-700);
   margin-bottom: 0.5rem;
-}
-
-/* Estilos del Dashboard - Card Azul*/
-.balance-card-finanglobal {
-  background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
-  border-radius: 20px;
-  padding: 2rem;
-  box-shadow: 0 10px 30px rgba(59, 130, 246, 0.3);
-}
-
-.stat-card-finanglobal {
-  background: white;
-  border-radius: 15px;
-  padding: 1.5rem;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-  transition: all 0.3s ease;
-}
-
-.stat-card-finanglobal:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
 
 /* Acciones Rapidas - Cards */
@@ -402,10 +372,6 @@
 
 /* Responsivo */
 @media (max-width: 768px) {
-  .balance-card-finanglobal {
-    margin-top: 1rem;
-  }
-
   .hero-section {
     min-height: auto;
     padding: 4rem 0;
@@ -425,10 +391,6 @@
 @media (max-width: 576px) {
   .main-content-finanglobal {
     margin-left: -0px;
-  }
-
-  .balance-card-finanglobal {
-    margin-top: 1rem;
   }
 
   .stat-number-finanglobal {
