@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { SidebarService } from 'src/app/shared/services/sidebarService';
 import { AuthService } from 'src/app/shared/services/authService';
-import { RouterLink } from "@angular/router";
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-navbar-admin',
@@ -11,9 +11,6 @@ import { RouterLink } from "@angular/router";
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class NavbarAdmin {
-
-  authData = inject(AuthService);
-
   constructor(private sidebarService: SidebarService, private authService: AuthService) {}
 
   onToggleClick(): void {
@@ -26,7 +23,8 @@ export class NavbarAdmin {
   }
 
   /* Usuario Actual */
-  get user(){
+  authData = inject(AuthService);
+  get user() {
     return this.authData.user();
   }
 }
