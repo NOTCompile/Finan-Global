@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+import { authGuard } from './shared/guards/authGuard';
 
 export const routes: Routes = [
   {
@@ -15,7 +16,9 @@ export const routes: Routes = [
   },
   {
     path: 'admin',
-    loadComponent: () => import('./features/admin/pages/pawnshop-page/pawnshop-page.component'),
+    loadComponent: () => import('./features/admin/pages/index-page/index-page.component'),
+    canActivate: [authGuard],
+    data: {roles:[1]},
     children: [
       {
         path: 'dashboard',
@@ -44,13 +47,15 @@ export const routes: Routes = [
       },
       {
         path: '**',
-        redirectTo: 'admin',
+        redirectTo: 'dashboard',
       },
     ],
   },
   {
     path: 'bank',
     loadComponent: () => import('./features/bank/pages/index-page/index-page.component'),
+    canActivate: [authGuard],
+    data: {roles:[2]},
     children: [
       {
         path: 'dashboard',
@@ -68,18 +73,20 @@ export const routes: Routes = [
       },
       {
         path: '**',
-        redirectTo: 'bank',
+        redirectTo: 'dashboard',
       },
     ],
   },
   {
     path: 'client',
     loadComponent: () => import('./features/client/pages/index-page/index-page.component'),
+    canActivate: [authGuard],
+    data: {roles:[4]},
     children: [
       {
         path: 'dashboard',
         loadComponent: () =>
-          import('./features/bank/pages/dashboard-page/dashboard-page.component'),
+          import('./features/client/pages/dashboard-page/dashboard-page.component'),
       },
       {
         path: 'account',
@@ -91,12 +98,8 @@ export const routes: Routes = [
           import('./features/client/pages/customer-service-page/customer-service-page.component'),
       },
       {
-        path: 'account-page',
+        path: 'account-user',
         loadComponent: () => import('./features/client/pages/account-page/account-page.component'),
-      },
-      {
-        path: 'bank',
-        loadComponent: () => import('./features/client/pages/bank-page/bank-page.component'),
       },
       {
         path: 'cards',
@@ -119,31 +122,33 @@ export const routes: Routes = [
       },
       {
         path: '**',
-        redirectTo: 'client',
+        redirectTo: 'dashboard',
       },
     ],
   },
   {
     path: 'pawnshop',
     loadComponent: () => import('./features/pawnshop/pages/index-page/index-page.component'),
+    canActivate: [authGuard],
+    data: {roles:[3]},
     children: [
       {
         path: 'dashboard',
         loadComponent: () =>
-          import('./features/bank/pages/dashboard-page/dashboard-page.component'),
+          import('./features/pawnshop/pages/dashboard-page/dashboard-page.component'),
       },
       {
         path: 'client',
-        loadComponent: () => import('./features/bank/pages/client-page/client-page.component'),
+        loadComponent: () => import('./features/pawnshop/pages/client-page/client-page.component'),
       },
       {
         path: 'solicitude',
         loadComponent: () =>
-          import('./features/bank/pages/solicitude-page/solicitude-page.component'),
+          import('./features/pawnshop/pages/solicitude-page/solicitude-page.component'),
       },
       {
         path: '**',
-        redirectTo: 'pawnshop',
+        redirectTo: 'dashboard',
       },
     ],
   },

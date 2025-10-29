@@ -1,0 +1,40 @@
+<!-- Top Navbar -->
+<div class="top-navbar-finanglobal">
+  <div class="container-fluid">
+    <div class="row align-items-center">
+      <div class="col align-items-center">
+        <button class="btn btn-toggle-sidebar" (click)="onToggleClick()">
+          <!-- Boton de Sidebar -->
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+
+      <div class="col-auto">
+        <div class="d-flex align-items-center">
+          <!-- Menu -->
+          <div class="ms-3 me-3">
+            <div class="btn btn-info" style="cursor: default;">Rol: Personal Empeño</div>
+          </div>
+          <div class="user-avatar-finanglobal me-2">
+            {{ user?.nombre_usuario?.charAt(0)?.toUpperCase()
+            }}{{ user?.apellidos?.charAt(0)?.toUpperCase() }}
+          </div>
+          <div class="dropdown">
+            <button
+              class="btn btn-outline dropdown-toggle"
+              type="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              {{ user?.correo }}
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" [routerLink]="">Perfil</a></li>
+              <li><a class="dropdown-item" (click)="logout()">Cerrar Sesión</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,1 +1,8 @@
-<p>index-page works!</p>,
+<div class="sidebar-finanglobal" id="sidebar" [class.collapsed]="isSidebarCollapsed">
+  <app-sidebar-client [collapsed]="isSidebarCollapsed"></app-sidebar-client>
+</div>
+
+<div class="main-content-finanglobal" id="mainContent" [class.expanded]="isSidebarCollapsed">
+  <app-navbar-client></app-navbar-client>
+  <router-outlet></router-outlet>
+</div>

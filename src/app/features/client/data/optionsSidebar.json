@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "name": "Dashboard",
+    "icon": "fa-solid fa-gauge",
+    "route": "/client/dashboard"
+  },
+  {
+    "id": 2,
+    "name": "Cuentas Bancarias",
+    "icon": "fa-solid fa-wallet",
+    "route": "/client/account"
+  },
+  {
+    "id": 3,
+    "name": "Tarjetas",
+    "icon": "fa-solid fa-money-check-dollar",
+    "route": "/client/cards"
+  },
+  {
+    "id": 4,
+    "name": "Prestamos",
+    "icon": "fa-solid fa-screwdriver-wrench",
+    "route": "/client/bank-loan"
+  },
+  {
+    "id": 5,
+    "name": "Transferencias",
+    "icon": "fa-solid fa-money-bill-transfer",
+    "route": "/client/transfer"
+  },
+  {
+    "id": 6,
+    "name": "Cambio de Divisas",
+    "icon": "fa-solid fa-scale-balanced",
+    "route": "/client/currency"
+  },
+  {
+    "id": 7,
+    "name": "Atención al Cliente",
+    "icon": "fa-solid fa-book-medical",
+    "route": "/client/customer-service"
+  }
+]
