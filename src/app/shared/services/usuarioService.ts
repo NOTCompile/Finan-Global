@@ -28,7 +28,7 @@ export class usuarioService {
   }
 
   /* Actualizar usuario existente - PUT */
-  update(usuario: Usuario): Observable<Usuario> {
+  update(usuario: Partial<Usuario>): Observable<Usuario> {
     return this.http.put<Usuario>(`${this.apiUrl}/${usuario.id_usuario}`, usuario).pipe(
       tap(() => this.cargarUsuarios())
     );
