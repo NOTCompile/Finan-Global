@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
-import { SidebarService } from 'src/app/shared/services/sidebarService';
+import { SidebarService } from 'src/app/shared/services/function/sidebarState.service';
 import { AuthService } from 'src/app/shared/services/authService';
 import { RouterLink } from '@angular/router';
 
@@ -25,6 +25,6 @@ export class NavbarAdmin {
   /* Usuario Actual */
   authData = inject(AuthService);
   get user() {
-    return this.authData.user();
+    return this.authData.usuario();
   }
 }

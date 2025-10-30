@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { environment } from '@environments/environment';
-import { SidebarService } from 'src/app/shared/services/sidebarService';
+import { SidebarService } from 'src/app/shared/services/function/sidebarState.service';
 
 @Component({
   selector: 'app-menu-lateral-encabezado',

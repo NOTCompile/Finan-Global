@@ -7,9 +7,9 @@ export const authGuard: CanActivateFn = (route: ActivatedRouteSnapshot) => {
   const router = inject(Router);
 
   // Si no detecta login, lo redirige a index
-  const user = auth.user();
-  if (!user) {
-    console.warn('Usuario no autenticado. Redirigiendo al login...');
+  const usuario = auth.usuario();
+  if (!usuario) {
+    console.log('Usuario no autenticado. Redirigiendo al login...');
     router.navigate(['/index']);
     return false;
   }
@@ -18,45 +18,31 @@ export const authGuard: CanActivateFn = (route: ActivatedRouteSnapshot) => {
   const allowedRoles = route.data['roles'] as number[];
 
   // Si la ruta no posee restricción de roles, permitir el acceso
-  if (!allowedRoles || allowedRoles.length === 0) return true;
-
-   // Validar si el rol del usuario está permitido
-  if (allowedRoles.includes(user.rol_usuario)) return true;
-
-
-  // Si no tiene permiso, redirigirlo a su vista correspondiente
-  switch (user.rol_usuario) {
-    case 1:
-      router.navigate(['/admin']);
-      break;
-    case 2:
-      router.navigate(['/bank']);
-      break;
-    case 3:
-      router.navigate(['/pawnshop']);
-      break;
-    case 4:
-      router.navigate(['/client']);
-      break;
-    default:
-      router.navigate(['/index']);
-      break;
-  }
-
-  const isLoggedIn = !!user;
-
-  if (!auth.isLoggedIn()) {
-    router.navigate(['/index']);
-    return false;
-  }
-
-  // Verificar roles permitidos
-  /* const allowedRoles = route.data?.['roles'] as number[] | undefined; */
-  const userRole = user?.rol_usuario;
-
-  if (allowedRoles && (!userRole || !allowedRoles.includes(userRole))) {
-    console.warn(`Acceso denegado: rol ${user?.rol_usuario} no permitido en esta ruta`);
-    router.navigate(['/index']);
+  if (!allowedRoles.includes(usuario.rol_usuario)) {
+    let rol = '';
+    switch (usuario.rol_usuario) {
+      case 1:
+        rol = 'Administrador';
+        router.navigate(['/admin']);
+        break;
+      case 2:
+        rol = 'Banco';
+        router.navigate(['/bank']);
+        break;
+      case 3:
+        rol = 'Empeño';
+        router.navigate(['/pawnshop']);
+        break;
+      case 4:
+        rol = 'Cliente';
+        router.navigate(['/client']);
+        break;
+      default:
+        rol = 'Desconocido';
+        router.navigate(['/index']);
+        break;
+    }
+    alert(`Acceso denegado: El Rol ${rol} no permitido en esta ruta`);
     return false;
   }
   return true;

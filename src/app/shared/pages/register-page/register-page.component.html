@@ -29,19 +29,20 @@
           </div>
 
           <!-- Login Form -->
-          <form id="loginForm" action="dashboard.html" method="post">
+          <form id="loginForm" [formGroup]="form" (ngSubmit)="registerUser()">
             <div class="mb-3">
               <label class="form-label form-label-finanglobal">
                 <i class="fas fa-user me-2"></i>Correo Electrónico
               </label>
               <input
-                type="text"
+                type="email"
                 class="form-control form-control-finanglobal"
-                id="email"
-                name="email"
+                id="correo"
+                name="correo"
+                formControlName="correo"
                 placeholder="Ingrese su Correo Electrónico"
                 required
-                autocomplete="email"
+                autocomplete="correo"
               />
               <div class="invalid-feedback">Por favor ingresa un email válido</div>
             </div>
@@ -51,13 +52,14 @@
                 <i class="fas fa-user me-2"></i>DNI
               </label>
               <input
-                type="text"
+                type="number"
                 class="form-control form-control-finanglobal"
-                id="dni"
-                name="dni"
-                placeholder="Ingresa su DNI"
+                id="dni_ruc"
+                name="dni_ruc"
+                formControlName="dni_ruc"
+                placeholder="Ingrese su DNI"
                 required
-                autocomplete="dni"
+                autocomplete="dni_ruc"
               />
               <div class="invalid-feedback">Por favor ingresa su DNI</div>
             </div>
@@ -70,11 +72,12 @@
                 <input
                   type="password"
                   class="form-control form-control-finanglobal"
-                  id="password"
-                  name="password"
-                  placeholder="Ingresa su contraseña"
+                  id="contrasena"
+                  name="contrasena"
+                  placeholder="Ingrese su contraseña"
+                  formControlName="contrasena"
                   required
-                  autocomplete="current-password"
+                  autocomplete="contrasena"
                 />
                 <button class="btn btn-outline-secondary" type="button" id="togglePassword">
                   <i class="fas fa-eye"></i>
@@ -98,10 +101,18 @@
               </a>
             </div>
 
-            <button type="submit" class="btn btn-finanglobal w-100 btn-lg mb-3" id="loginBtn">
+            <button
+              type="submit"
+              class="btn btn-finanglobal w-100 btn-lg mb-3"
+              id="loginBtn"
+              [disabled]="form.invalid"
+            >
               <span class="login-text"> <i class="fa-solid fa-user-plus me-2"></i>Registrar </span>
               <span class="spinner-finanglobal d-none"></span>
             </button>
+            @if (errorMsg()) {
+            <p class="text-danger p-3 text-center">{{ errorMsg() }}</p>
+            }
           </form>
 
           <!-- Back to Home -->

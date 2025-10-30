@@ -11,7 +11,7 @@ import { AuthService } from 'src/app/shared/services/authService';
 export class WelcomeAdmin {
   /* User */
   private authData = inject(AuthService);
-  user = this.authData.user;
+  usuario = this.authData.usuario;
 
   constructor() {
     this.updateDatetime();

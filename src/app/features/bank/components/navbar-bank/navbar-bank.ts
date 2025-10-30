@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { AuthService } from 'src/app/shared/services/authService';
-import { SidebarService } from 'src/app/shared/services/sidebarService';
+import { SidebarService } from 'src/app/shared/services/function/sidebarState.service';
 import { RouterLink } from "@angular/router";
 
 @Component({
@@ -26,6 +26,6 @@ export class NavbarBank {
   /* Usuario Actual */
   authData = inject(AuthService);
   get user() {
-    return this.authData.user();
+    return this.authData.usuario();
   }
 }
