@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Output } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { environment } from '@environments/environment';
-import { SidebarService } from 'src/app/shared/services/sidebarService';
+import { SidebarService } from 'src/app/shared/services/function/sidebarState.service';
 
 @Component({
   selector: 'app-barra-navegacion',

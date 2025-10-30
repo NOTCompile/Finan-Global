@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { SidebarService } from 'src/app/shared/services/sidebarService';
+import { SidebarService } from 'src/app/shared/services/function/sidebarState.service';
 import { SidebarBank } from '../../components/sidebar-bank/sidebar-bank';
 import { NavbarBank } from '../../components/navbar-bank/navbar-bank';
 

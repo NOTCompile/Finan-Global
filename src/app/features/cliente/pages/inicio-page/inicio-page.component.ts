@@ -2,7 +2,7 @@ import { Component, Input } from '@angular/core';
 import { RouterLink, RouterOutlet } from '@angular/router';
 import { environment } from '@environments/environment';
 import { MenuLateralComponent } from '../../components/menu-lateral/menu-lateral.component';
-import { SidebarService } from 'src/app/shared/services/sidebarService';
+import { SidebarService } from 'src/app/shared/services/function/sidebarState.service';
 
 
 interface Actividad {

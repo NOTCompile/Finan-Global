@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { OptionSidebarInterface } from 'src/app/shared/interfaces/OptionsSidebarInterface';
-import { SidebarService } from 'src/app/shared/services/sidebarService';
+import { SidebarService } from 'src/app/shared/services/function/sidebarState.service';
 import optionsSidebar from '../../data/optionsSidebar.json';
 
 @Component({

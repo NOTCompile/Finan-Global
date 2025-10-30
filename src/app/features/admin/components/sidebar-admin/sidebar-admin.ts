@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { OptionSidebarInterface } from 'src/app/shared/interfaces/OptionsSidebarInterface';
 import optionsSidebar from '../../data/optionsSidebar.json';
-import { SidebarService } from 'src/app/shared/services/sidebarService';
+import { SidebarService } from 'src/app/shared/services/function/sidebarState.service';
 
 @Component({
   selector: 'app-sidebar-admin',

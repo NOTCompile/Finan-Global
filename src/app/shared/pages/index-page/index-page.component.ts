@@ -9,7 +9,6 @@ import { AuthService } from '../../services/authService';
   templateUrl: './index-page.component.html',
   styleUrl: './index-page.component.css',
   standalone: true,
-  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export default class IndexPageComponent {
   errorMsg = signal('');

@@ -7,10 +7,6 @@ export const routes: Routes = [
     loadComponent: () => import('./shared/pages/index-page/index-page.component'),
   },
   {
-    path: 'login',
-    loadComponent: () => import('./shared/pages/login-page/login-page.component'),
-  },
-  {
     path: 'register',
     loadComponent: () => import('./shared/pages/register-page/register-page.component'),
   },
@@ -18,7 +14,7 @@ export const routes: Routes = [
     path: 'admin',
     loadComponent: () => import('./features/admin/pages/index-page/index-page.component'),
     canActivate: [authGuard],
-    data: {roles:[1]},
+    data: { roles: [1] },
     children: [
       {
         path: 'dashboard',
@@ -32,6 +28,10 @@ export const routes: Routes = [
       {
         path: 'card',
         loadComponent: () => import('./features/admin/pages/card-page/card-page.component'),
+      },
+      {
+        path: 'client',
+        loadComponent: () => import('./features/admin/pages/client-page/client-page.component'),
       },
       {
         path: 'user',
@@ -55,7 +55,7 @@ export const routes: Routes = [
     path: 'bank',
     loadComponent: () => import('./features/bank/pages/index-page/index-page.component'),
     canActivate: [authGuard],
-    data: {roles:[2]},
+    data: { roles: [2] },
     children: [
       {
         path: 'dashboard',
@@ -81,7 +81,7 @@ export const routes: Routes = [
     path: 'client',
     loadComponent: () => import('./features/client/pages/index-page/index-page.component'),
     canActivate: [authGuard],
-    data: {roles:[4]},
+    data: { roles: [4] },
     children: [
       {
         path: 'dashboard',
@@ -130,7 +130,7 @@ export const routes: Routes = [
     path: 'pawnshop',
     loadComponent: () => import('./features/pawnshop/pages/index-page/index-page.component'),
     canActivate: [authGuard],
-    data: {roles:[3]},
+    data: { roles: [3] },
     children: [
       {
         path: 'dashboard',

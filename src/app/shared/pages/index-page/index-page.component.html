@@ -60,6 +60,7 @@
                 type="email"
                 class="form-control form-control-finanglobal"
                 formControlName="correo"
+                autocomplete="correo"
                 placeholder="Ingrese su Correo Electrónico"
               />
             </div>
@@ -72,6 +73,7 @@
                 id="contrasena"
                 type="password"
                 class="form-control form-control-finanglobal"
+                autocomplete="contrasena"
                 formControlName="contrasena"
                 placeholder="Ingrese su Contraseña"
               />
@@ -91,7 +93,7 @@
             </button>
           </form>
           @if (errorMsg()) {
-          <p class="text-danger">{{ errorMsg() }}</p>
+          <p class="text-danger p-3 text-center">{{ errorMsg() }}</p>
           }
 
           <!-- ¿? Contraseña -->
