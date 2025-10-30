@@ -1,0 +1,84 @@
+@if (modalState.state()) {
+<div
+  class="modal fade show d-block animate-modal"
+  tabindex="-1"
+  role="dialog"
+  style="animation: fadeIn 0.3s ease"
+>
+  <div class="modal-dialog fade modal-xl modal-dialog-centered">
+    <div class="modal-content shadow-lg rounded-3 border-0">
+      <!-- Modal Title -->
+      <div class="modal-header modal-finanglobal text-white">
+        <h5 class="modal-title">{{ modo === 'editar' ? 'Editar Usuario' : 'Nuevo Usuario' }}</h5>
+        <button type="button" class="btn-close btn-close-white" (click)="cerrarModal()"></button>
+      </div>
+      <!-- Modal Content -->
+      <div class="modal-body">
+        <form [formGroup]="formAddUsuario" class="row g-3">
+          <div class="col-md-3">
+            <label class="form-label">DNI:</label>
+            <input type="text" formControlName="dni_ruc" class="form-control" />
+          </div>
+
+          <div class="col-md-6">
+            <label class="form-label">Correo Electrónico:</label>
+            <input type="email" formControlName="correo" class="form-control" />
+          </div>
+
+          <div class="col-md-3">
+            <label class="form-label">Contraseña:</label>
+            <input type="password" formControlName="contrasena" class="form-control" />
+          </div>
+
+          <div class="col-md-6">
+            <label class="form-label">Nombres:</label>
+            <input type="text" formControlName="nombre" class="form-control" />
+          </div>
+
+          <div class="col-md-6">
+            <label class="form-label">Apellidos:</label>
+            <input type="text" formControlName="apellidos" class="form-control" />
+          </div>
+
+          <div class="col-12">
+            <label class="form-label">Dirección:</label>
+            <input type="text" formControlName="direccion" class="form-control" />
+          </div>
+
+          <div class="col-md-3">
+            <label class="form-label">Sexo:</label>
+            <select formControlName="sexo" class="form-select">
+              <option selected>Seleccione...</option>
+              <option value="Masculino">Masculino</option>
+              <option value="Femenino">Femenino</option>
+            </select>
+          </div>
+
+          <div class="col-md-3">
+            <label class="form-label">Teléfono:</label>
+            <input type="number" formControlName="telefono" class="form-control" />
+          </div>
+          <div class="col-md-3">
+            <label class="form-label">Rol:</label>
+            <select formControlName="sexo" class="form-select">
+              <option selected>Seleccione...</option>
+              <option value="1">Administrador</option>
+              <option value="2">Banco</option>
+              <option value="3">Empeño</option>
+            </select>
+          </div>
+        </form>
+      </div>
+      <!-- Modal Footer -->
+      <div class="modal-footer">
+        <button class="btn btn-outline-danger" (click)="cerrarModal()">Cancelar</button>
+        <button class="btn btn-success" [disabled]="formAddUsuario.invalid" (click)="onSubmit()">
+          {{ modo === 'editar' ? 'Actualizar Usuario' : 'Agregar Usuario' }}
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal-backdrop fade show"></div>
+}

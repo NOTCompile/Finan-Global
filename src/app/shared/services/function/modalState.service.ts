@@ -4,6 +4,7 @@ import { Injectable, signal } from '@angular/core';
   providedIn: 'root',
 })
 export class ModalStateService {
+  private _isOpen = signal(false);
   isOpen = signal(false);
 
   open(title: string = '') {
@@ -12,5 +13,9 @@ export class ModalStateService {
 
   close() {
     this.isOpen.set(false);
+  }
+
+  state() {
+    return this._isOpen();
   }
 }

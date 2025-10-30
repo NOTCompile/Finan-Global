@@ -1,0 +1,15 @@
+.contenedor {
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><radialGradient id="a" cx="50%" cy="50%"><stop offset="0%" stop-color="%23ffffff" stop-opacity="0.1"/><stop offset="100%" stop-color="%23ffffff" stop-opacity="0"/></radialGradient></defs><circle cx="200" cy="200" r="150" fill="url(%23a)"/><circle cx="800" cy="400" r="200" fill="url(%23a)"/><circle cx="400" cy="800" r="180" fill="url(%23a)"/></svg>'),
+    linear-gradient(135deg, var(--primary-color), var(--secondary-color), var(--accent-color));
+
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.titulo {
+  font-size: 150px;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color), var(--accent-color));
+  background-clip: text;
+  color: transparent;
+}

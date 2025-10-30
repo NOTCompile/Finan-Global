@@ -23,7 +23,7 @@ export default class ClientPage implements OnInit {
   modo = signal<'agregar' | 'editar'>('agregar');
   usuarioSeleccionado = signal<Partial<Usuario> | null>(null);
 
-  // Computed: total de usuarios (útil para vistas o estadísticas)
+  // Computed: total de usuarios
   totalUsuarios = computed(() => this.usuarios().length);
 
   // Ciclo de vida

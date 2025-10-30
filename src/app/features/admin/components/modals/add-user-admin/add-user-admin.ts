@@ -1,21 +1,21 @@
-import { Component, effect, EventEmitter, inject, Input, input, Output } from '@angular/core';
+import { Component, effect, EventEmitter, inject, Input, Output } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Usuario } from 'src/app/shared/interfaces/UsuarioInterface';
 import { ModalStateService } from 'src/app/shared/services/function/modalState.service';
 
 @Component({
-  selector: 'app-add-client-admin',
+  selector: 'app-add-user-admin',
   imports: [ReactiveFormsModule],
-  templateUrl: './add-client-admin.html',
-  styleUrl: './add-client-admin.css',
+  templateUrl: './add-user-admin.html',
+  styleUrl: './add-user-admin.css',
 })
-export class AddClientAdmin {
+export class AddUserAdmin {
   // Entradas
   @Input() modo: 'agregar' | 'editar' = 'agregar';
   @Input() set usuario(value: Partial<Usuario> | null) {
     if (value) {
       this._usuario = value;
-      this.formAddCliente.patchValue(value);
+      this.formAddUsuario.patchValue(value);
     }
   }
   private _usuario: Partial<Usuario> | null = null;
@@ -23,11 +23,11 @@ export class AddClientAdmin {
   constructor() {
     effect(() => {
       if (this.modo === 'agregar') {
-        this.formAddCliente.reset({
+        this.formAddUsuario.reset({
           sexo: 'Seleccione...',
         });
       } else if (this.modo === 'editar' && this._usuario) {
-        this.formAddCliente.patchValue(this._usuario);
+        this.formAddUsuario.patchValue(this._usuario);
       }
     });
   }
@@ -39,7 +39,7 @@ export class AddClientAdmin {
   modalState = inject(ModalStateService);
 
   // Formulario reactivo
-  formAddCliente: FormGroup = this.fb.group({
+  formAddUsuario: FormGroup = this.fb.group({
     dni_ruc: ['', [Validators.required, Validators.minLength(8)]],
     correo: ['', [Validators.required, Validators.email]],
     contrasena: ['', [Validators.required, Validators.minLength(6)]],
@@ -57,12 +57,12 @@ export class AddClientAdmin {
 
   // Enviar datos al componente padre
   onSubmit(): void {
-    if (this.formAddCliente.invalid) {
-      this.formAddCliente.markAllAsTouched();
+    if (this.formAddUsuario.invalid) {
+      this.formAddUsuario.markAllAsTouched();
       return;
     }
 
-    const datosFormulario = this.formAddCliente.value;
+    const datosFormulario = this.formAddUsuario.value;
 
     // Emitir datos combinados
     const datosEmitidos: Partial<Usuario> = {

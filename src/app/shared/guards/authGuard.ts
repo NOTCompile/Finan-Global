@@ -39,6 +39,7 @@ export const authGuard: CanActivateFn = (route: ActivatedRouteSnapshot) => {
         break;
       default:
         rol = 'Desconocido';
+        /* window.location.reload(); */
         router.navigate(['/index']);
         break;
     }

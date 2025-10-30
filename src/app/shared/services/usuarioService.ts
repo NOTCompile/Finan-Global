@@ -15,6 +15,13 @@ export class usuarioService {
   }
 
   // CRUD
+  /* Obtener todos los Usuarios */
+  findAll(): Observable<Usuario[]> {
+    return this.http
+      .get<Usuario[]>(this.apiUrl)
+      .pipe(tap((data) => this.guardarEnLocalStorage(data)));
+  }
+
   /*  Obtener usuario por ID - GET */
   getById(id: number): Observable<Usuario> {
     return this.http.get<Usuario>(`${this.apiUrl}/${id}`);
@@ -22,23 +29,19 @@ export class usuarioService {
 
   /* Crear nuevo usuario - POST */
   create(usuario: Usuario): Observable<Usuario> {
-    return this.http.post<Usuario>(this.apiUrl, usuario).pipe(
-      tap(() => this.cargarUsuarios())
-    );
+    return this.http.post<Usuario>(this.apiUrl, usuario).pipe(tap(() => this.cargarUsuarios()));
   }
 
   /* Actualizar usuario existente - PUT */
   update(usuario: Partial<Usuario>): Observable<Usuario> {
-    return this.http.put<Usuario>(`${this.apiUrl}/${usuario.id_usuario}`, usuario).pipe(
-      tap(() => this.cargarUsuarios())
-    );
+    return this.http
+      .put<Usuario>(`${this.apiUrl}/${usuario.id_usuario}`, usuario)
+      .pipe(tap(() => this.cargarUsuarios()));
   }
 
   /* Eliminar usuario - DELETE */
   delete(id: number): Observable<void> {
-    return this.http.delete<void>(`${this.apiUrl}/${id}`).pipe(
-      tap(() => this.eliminarLocal(id))
-    );
+    return this.http.delete<void>(`${this.apiUrl}/${id}`).pipe(tap(() => this.eliminarLocal(id)));
   }
 
   /* Buscar usuario por correo - GET */
@@ -48,13 +51,13 @@ export class usuarioService {
 
   /* Filtrar usuarios por rol */
   findByRol(rol: number): Observable<Usuario[]> {
-    return this.http.get<Usuario[]>(`${this.apiUrl}/tipo/${rol}`).pipe(
-      tap((data) => this.guardarEnLocalStorage(data))
-    );
+    return this.http
+      .get<Usuario[]>(`${this.apiUrl}/tipo/${rol}`)
+      .pipe(tap((data) => this.guardarEnLocalStorage(data)));
   }
 
   // PERSISTENCIA
-  private inicializarData(){
+  private inicializarData() {
     const data = localStorage.getItem('usuarios');
     if (data) {
       this.usuarios.set(JSON.parse(data));
