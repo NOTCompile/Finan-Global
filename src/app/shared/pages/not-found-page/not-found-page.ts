@@ -8,4 +8,10 @@ import { RouterLink } from "@angular/router";
   styleUrl: './not-found-page.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export default class NotFoundPage { }
+export default class NotFoundPage {
+
+  btnAtras(){
+    window.history.back();
+  }
+
+ }
