@@ -154,6 +154,6 @@ export const routes: Routes = [
   },
   {
     path: '**',
-    redirectTo: 'index',
+    loadComponent: () => import('./shared/pages/not-found-page/not-found-page')
   },
 ];

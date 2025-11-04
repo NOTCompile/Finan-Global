@@ -1,1 +1,69 @@
-<p>user-page works!</p>,
+<div class="container">
+  <div class="card-finanglobal mt-4">
+    <div class="d-flex align-items-center justify-content-between mb-3 gap-4 p-2">
+      <h5><i class="fa-solid fa-users-gear me-2"></i>Gestión de Usuarios</h5>
+
+      <div class="input-group w-50">
+        <input type="search" class="form-control" placeholder="Buscar usuario..." />
+        <button class="btn btn-outline-secondary" type="button" id="button-addon2">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+      </div>
+
+      <button class="btn btn-finanglobal" (click)="demo()">
+        <i class="fas fa-plus me-2"></i>Nuevo Usuario
+      </button>
+    </div>
+    <table class="table text-center">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Nombre</th>
+          <th scope="col">DNI</th>
+          <th scope="col">Correo</th>
+          <th scope="col">Rol</th>
+          <th scope="col">Sexo</th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody class="table-group-divider">
+        @for (item of usuarios(); track item.id_usuario) {
+        <tr>
+          <th scope="row">{{ item.id_usuario }}</th>
+          <td>{{ item.nombre }} {{ item.apellidos }}</td>
+          <td>{{ item.dni_ruc }}</td>
+          <td>{{ item.correo }}</td>
+          <td>
+            @if (item.rol_usuario === 1 ) { Administrador } @else if (item.rol_usuario === 2) { Banco
+            } @else { Empeño }
+          </td>
+          <td>
+            @if (item.sexo === 'Femenino' ) {
+            <i class="fa-solid fa-person-dress fs-4 text-danger"></i>} @else if (item.sexo ===
+            'Masculino') {
+            <i class="fa-solid fa-person fs-4 text-primary"></i>
+            } @else {
+            <i class="fa-solid fa-non-binary fs-4 text-muted"></i>
+            }
+          </td>
+          <td>
+            <button
+              (click)="demo()"
+              class="btn btn-sm btn-outline-warning me-1 ms-1"
+            >
+              <i class="fa-solid fa-pen"></i>
+            </button>
+            <button
+              (click)="eliminarUsuario(item.id_usuario)"
+              class="btn btn-sm btn-outline-danger ms-1"
+            >
+              <i class="fa-solid fa-trash"></i>
+            </button>
+          </td>
+        </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+</div>
+<app-add-user-admin [modo]="modo()" [usuario]="usuarioSeleccionado()" (guardar)="onGuardar($event)"></app-add-user-admin>

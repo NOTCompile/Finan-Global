@@ -1,0 +1,14 @@
+.modal-finanglobal {
+  background: linear-gradient(45deg, var(--accent-color), #0891b2);
+}
+
+.animate-modal .modal-dialog {
+  transform: translateY(-80px) scale(0.95);
+  opacity: 0;
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.animate-modal.show .modal-dialog {
+  transform: translateY(0) scale(1);
+  opacity: 1;
+}
